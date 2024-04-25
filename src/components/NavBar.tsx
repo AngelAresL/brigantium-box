@@ -9,7 +9,13 @@ const NavBar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
-    setIsOpen(!isOpen); 
+    setIsOpen(!isOpen);
+  };
+  const scrollToSection = (id: string) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
   };
   return (
     <nav>
@@ -30,26 +36,32 @@ const NavBar: React.FC = () => {
           } sm:hidden absolute bg-darkViolet p-6 rounded-lg left-6 right-6 top-20 z-50 flex-col items-center justify-center w-full space-y-6 font-bold text-white`}
         >
           {navLinks.map((link, index) => (
-            <Link
-              key={index}
-              href={link.href}
-              className="text-center hover:underline w-full"
-            >
+            <button key={index} className="text-center hover:underline w-full">
               {link.label}
-            </Link>
+            </button>
           ))}
         </div>
-      
+
         <div className="hidden sm:flex space-x-8 items-center font-bold">
-          {navLinks.map((link, index) => (
-            <Link
-              key={index}
-              href={link.href}
-              className="text-grayishViolet hover:text-veryDarkViolet"
-            >
-              {link.label}
-            </Link>
-          ))}
+          {navLinks.map((link, index) =>
+            link.id ? (
+              <button
+                key={index}
+                className="text-grayishViolet hover:text-veryDarkViolet"
+                onClick={() => scrollToSection(link.id!)}
+              >
+                {link.label}
+              </button>
+            ) : (
+              <Link
+                key={index}
+                href={link.href!}
+                className="text-grayishViolet hover:text-veryDarkViolet"
+              >
+                {link.label}
+              </Link>
+            )
+          )}
         </div>
       </div>
     </nav>
