@@ -1,6 +1,12 @@
+"use client";
+import ContactForm from "@/components/ContactForm";
 import Image from "next/image";
+import { useEffect } from "react";
 
 export default function Home() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <h1>Home Page</h1>
@@ -42,21 +48,9 @@ export default function Home() {
           width={700}
           height={700}
         />
-
-        <h2 id="contact">Sección 2: Subtítulo</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
-          tristique, magna eu feugiat luctus, sapien lectus aliquam sapien, a
-          fermentum odio magna ut dui. Nunc sit amet interdum magna, a bibendum
-          arcu.
-        </p>
-        <Image
-          src="/brigantium-logo.png"
-          alt="Imagen de prueba"
-          width={700}
-          height={700}
-        />
-
+        <div id="contact">
+          <ContactForm />
+        </div>
         <h2>Sección 3: Subtítulo</h2>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
