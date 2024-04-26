@@ -1,5 +1,6 @@
 "use client";
 import ContactForm from "@/components/ContactForm";
+import Pricing from "@/components/Pricing/Pricing";
 import Image from "next/image";
 import { useEffect } from "react";
 
@@ -95,6 +96,7 @@ export default function Home() {
           width={700}
           height={700}
         />
+        <Pricing />
       </div>
     </>
   );
