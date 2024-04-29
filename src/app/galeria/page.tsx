@@ -8,7 +8,7 @@ const GalleryPage = () => {
       <p className="text-xl text-center mt-2">
         Aquí se viene a disfrutar y entrenar duro. Esta es nuestra familia.
       </p>
-      <div className="mt-8">
+      <div className="m-8">
         
         <PhotoGallery />
       </div>

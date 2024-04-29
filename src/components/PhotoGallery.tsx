@@ -1,10 +1,17 @@
 "use client";
 import Image, { StaticImageData } from "next/image";
 import Photo from "./Photo";
-import Box from "@mui/material/Box";
-import ImageList from "@mui/material/ImageList";
-import ImageListItem from "@mui/material/ImageListItem";
-import Modal from "@mui/material/Modal";
+// import Box from "@mui/material/Box";
+import {
+  useTheme,
+  useMediaQuery,
+  ImageList,
+  ImageListItem,
+  Modal,
+  Box,
+} from "@mui/material";
+// import ImageListItem from "@mui/material/ImageListItem";
+// import Modal from "@mui/material/Modal";
 
 // Importando imágenes como módulos estáticos para usar con Next.js Image
 import foto1 from "../../public/foto1a.jpg";
@@ -44,6 +51,20 @@ const photos: PhotoInfo[] = [
 ];
 
 const PhotoGallery = () => {
+  const theme = useTheme();
+  const xs = useMediaQuery(theme.breakpoints.down("sm"));
+  const sm = useMediaQuery(
+    theme.breakpoints.up("sm") && theme.breakpoints.down("md")
+  );
+  const md = useMediaQuery(theme.breakpoints.up("md"));
+
+  const getCols = () => {
+    if (xs) return 1; 
+    if (sm) return 3; 
+    if (md) return 4; 
+    
+  };
+
   const [selectedPhoto, setSelectedPhoto] = useState<{
     src: StaticImageData;
     alt: string;
@@ -52,7 +73,7 @@ const PhotoGallery = () => {
   return (
     <>
       <Box sx={{ width: "100%", height: "100%" }}>
-        <ImageList variant="masonry" cols={3} gap={1}>
+        <ImageList variant="masonry" cols={getCols()} gap={1}>
           {photos.map((photo, index) => (
             <ImageListItem
               key={index}
