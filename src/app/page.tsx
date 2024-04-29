@@ -1,12 +1,13 @@
 "use client";
 import ContactForm from "@/components/ContactForm";
 import Image from "next/image";
+import "./globals.css";
 import { useEffect } from "react";
 
-export default function Home() {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+const Home = () => {
+  // useEffect(() => {
+  //   window.scrollTo(0, 0);
+  // }, []);
   return (
     <>
       <h1>Home Page</h1>
@@ -98,4 +99,5 @@ export default function Home() {
       </div>
     </>
   );
-}
+};
+export default Home;

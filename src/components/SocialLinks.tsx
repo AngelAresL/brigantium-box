@@ -1,14 +1,18 @@
 import socialLinks from "../data/socialLinks";
 
+type SocialLinksProps = {
+  color: string;
+};
 
-const SocialLinks: React.FC = () => {
+const SocialLinks: React.FC<SocialLinksProps> = ({ color }) => {
   return (
     <div className="flex justify-center space-x-6 md:order-2">
       {socialLinks.map((link, index) => (
         <a
           key={index}
           href={link.href}
-          className="text-gray-400 hover:text-gray-500"
+          style={{ color: color }}
+          className="hover:text-opacity-75 transition duration-150 ease-in-out transform hover:scale-125"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -21,4 +25,3 @@ const SocialLinks: React.FC = () => {
 };
 
 export default SocialLinks;
-
