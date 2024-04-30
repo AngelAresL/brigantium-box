@@ -61,8 +61,11 @@
   transform: rotateY(-180deg);
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1215px) {
   .flip-pricing {
     width: 100%;
+  }
+  .grid-pricing {
+    flex-direction: column;
   }
 }
