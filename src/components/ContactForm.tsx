@@ -93,7 +93,8 @@ const ContactForm: React.FC = () => {
             src="/location-logo.svg"
             alt="Location"
             size={36}
-            className="m-4 rounded-md transition duration-150 ease-in-out transform hover:scale-125"
+            classNameA="flex justify-center items-center"
+            classNameImg="m-4 rounded-md transition duration-150 ease-in-out transform hover:scale-125"
           />
           <h3>Dirección</h3>
           <p>C/ Que flipas, 123, 15002, A Coruña, España</p>
@@ -104,7 +105,8 @@ const ContactForm: React.FC = () => {
             src="/phone-logo.svg"
             alt="Phone"
             size={36}
-            className="m-4 rounded-md transition duration-150 ease-in-out transform hover:scale-125"
+            classNameA="flex justify-center items-center"
+            classNameImg="m-4 rounded-md transition duration-150 ease-in-out transform hover:scale-125"
           />
           <h3>Teléfono</h3>
           <p>666 66 66 66</p>
@@ -115,7 +117,8 @@ const ContactForm: React.FC = () => {
             src="/mail-logo.svg"
             alt="Mail"
             size={36}
-            className="m-4 rounded-md transition duration-150 ease-in-out transform hover:scale-125"
+            classNameA="flex justify-center items-center"
+            classNameImg="m-4 rounded-md transition duration-150 ease-in-out transform hover:scale-125"
           />
 
           <h3>Email</h3>

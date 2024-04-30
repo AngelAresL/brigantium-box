@@ -7,6 +7,7 @@ type ComponentLogoProps = {
   alt: string;
   classNameA?: string;
   classNameImg?: string;
+  url?: string;
 };
 
 const ComponentLogo: React.FC<ComponentLogoProps> = ({
