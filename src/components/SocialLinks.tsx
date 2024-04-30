@@ -1,37 +1,26 @@
+import socialLinks from "../data/socialLinks";
 
-import ComponentLogo from "./ComponentLogo";
+type SocialLinksProps = {
+  color: string;
+};
 
-const SocialLinks = () => {
+const SocialLinks: React.FC<SocialLinksProps> = ({ color }) => {
   return (
-    <ul className="flex space-x-2">
-      <li>
-        <ComponentLogo
-          url="https://www.instagram.com/"
-          src="/instagram-logo.jpg"
-          alt="Instagram"
-          size={24}
-          className="rounded-md transition duration-150 ease-in-out transform hover:scale-125"
-        />
-      </li>
-      <li>
-        <ComponentLogo
-          url="https://www.facebook.com/"
-          src="/facebook-logo.jpg"
-          alt="Facebook"
-          size={24}
-          className="rounded-md transition duration-150 ease-in-out transform hover:scale-125"
-        />
-      </li>
-      <li>
-        <ComponentLogo
-          url="https://www.twitter.com/"
-          src="/x-logo.jpg"
-          alt="Twitter"
-          size={24}
-          className="rounded-md transition duration-150 ease-in-out transform hover:scale-125"
-        />
-      </li>{" "}
-    </ul>
+    <div className="flex justify-center space-x-6 md:order-2">
+      {socialLinks.map((link, index) => (
+        <a
+          key={index}
+          href={link.href}
+          style={{ color: color }}
+          className="hover:text-opacity-75 transition duration-150 ease-in-out transform hover:scale-125"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span className="sr-only">{link.name}</span>
+          <link.icon className="h-6 w-6" aria-hidden="true" />
+        </a>
+      ))}
+    </div>
   );
 };
 

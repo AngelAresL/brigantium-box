@@ -1,26 +1,27 @@
 import Image from "next/image";
 
 type ComponentLogoProps = {
-  url?: string;
+  href?: string;
   size: number;
   src: string;
   alt: string;
-  className?: string;
+  classNameA?: string;
+  classNameImg?: string;
 };
 
 const ComponentLogo: React.FC<ComponentLogoProps> = ({
-  url,
+  href,
   size,
   src,
   alt,
-  className,
+  classNameA,
+  classNameImg,
 }) => {
   return (
     <a
-      className="flex justify-center items-center"
-      href={url}
-      target="_blank"
-      rel="noopener noreferrer"
+      className={classNameA}
+      href={href}
+      
     >
       <Image
         src={src}
@@ -28,7 +29,7 @@ const ComponentLogo: React.FC<ComponentLogoProps> = ({
         width={size}
         height={size}
         layout="fixed"
-        className={className}
+        className={classNameImg}
       />
     </a>
   );
