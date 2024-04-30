@@ -36,7 +36,7 @@ const NavBar: React.FC = () => {
             <Bars3Icon className="h-10 w-10 " aria-hidden="true" />
           </button>
         </div>
-        <div className="hidden lg:flex lg:gap-x-12">
+        <div className="hidden lg:flex lg:gap-x-12 translate-y-[-12px]">
           {navLinks.map((item) => (
             <a
               key={item.name}

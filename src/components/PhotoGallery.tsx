@@ -46,7 +46,7 @@ const photos: PhotoInfo[] = [
   { src: foto6, alt: "Description of photo 6" },
   { src: foto3, alt: "Description of photo 3" },
   { src: foto4, alt: "Description of photo 4" },
-  { src: foto5, alt: "Description of photo 5" },
+  { src: foto6, alt: "Description of photo 6" },
   { src: foto6, alt: "Description of photo 6" },
 ];
 
