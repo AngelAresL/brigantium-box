@@ -5,15 +5,23 @@ import Image from "next/image";
 import "./globals.css";
 import { useEffect } from "react";
 
+import Presentation from "@/components/Presentation";
+
 const Home = () => {
   // useEffect(() => {
   //   window.scrollTo(0, 0);
   // }, []);
   return (
     <>
-      <h1>Home Page</h1>
+      
+      <Presentation/>
       <div>
-        <h1>Sección 1: Título Principal</h1>
+      <h2 className="text-4xl font-bold text-center mt-10">Horarios y Clases</h2>
+     
+      </div>
+     
+      <div>
+        <h1 >Sección 1: Título Principal</h1>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
           vehicula elit eu convallis feugiat. Nulla facilisi. Quisque at risus a

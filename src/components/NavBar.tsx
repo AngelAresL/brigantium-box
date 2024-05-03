@@ -1,89 +1,179 @@
 "use client";
 import ComponentLogo from "./ComponentLogo";
-
-import { useState } from "react";
+import { useMediaQuery, useTheme } from "@mui/material";
+import { useState, useEffect } from "react";
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import navLinks from "@/data/navLinks";
-
-// import "./NavBar.css";
+import { animate, motion, useAnimation } from "framer-motion";
 
 const NavBar: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isShrunk, setIsShrunk] = useState(false);
+  const controls = useAnimation();
+
+  const theme = useTheme();
+  const isLargeScreen = useMediaQuery(theme.breakpoints.up("lg"));
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (isLargeScreen) {
+        
+        if (window.scrollY > 50) {
+          if (!isShrunk) {
+            setIsShrunk(true);
+
+            controls.start("shrink");
+          }
+        } else {
+          if (isShrunk) {
+            setIsShrunk(false);
+
+            controls.start("initial");
+          }
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [isShrunk, controls, isLargeScreen]);
+
+  const logoVariants = {
+    initial: {
+      opacity: 1,
+    },
+    shrink: {
+      opacity: 0,
+      transition: {
+        duration: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { y: -20, opacity: 0 },
+    visible: (custom: any) => ({
+      y: 0,
+      opacity: 1,
+      transition: { delay: custom * 0.1 },
+    }),
+  };
+
+  const linkVariants = {
+    initial: { fontSize: 24, color: '#cccccc' },
+    shrink: {
+      fontSize: 18,
+      color: '#999999',
+     
+      transition: {
+        duration: 0.2
+      }
+    }
+  };
 
   return (
     <>
       <nav
-        className="mx-auto flex w-full items-center justify-between px-8 pb-2 "
+        className="mx-auto flex w-full items-center justify-between px-8 py-4 "
         aria-label="Global"
       >
-        <div className="flex lg:flex-1">
+        <motion.div
+          className="flex lg:flex-1 "
+          variants={logoVariants}
+          animate={controls}
+        >
           <ComponentLogo
             size={80}
             src={"/brigantium-logo.png"}
             alt={"Brigantium logo"}
             href={"#"}
-            classNameA="-m-1.5 p-1.5 lg:translate-y-[-12px]"
+            classNameA="-m-1.5 p-1.5 "
           />
-        </div>
-        <div className="flex py-8 lg:hidden">
+        </motion.div>
+        <div className="flex py-4 lg:hidden">
           <button
             type="button"
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-white"
+            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-400"
             onClick={() => setMobileMenuOpen(true)}
           >
             <span className="sr-only">Open main menu</span>
-            <Bars3Icon className="h-10 w-10 " aria-hidden="true" />
+            <Bars3Icon className="h-11 w-11 " aria-hidden="true" />
           </button>
         </div>
-        <div className="hidden lg:flex lg:gap-x-12 translate-y-[-12px]">
+        <div className="hidden lg:flex lg:gap-x-12 ">
           {navLinks.map((item) => (
-            <a
+            <motion.a
               key={item.name}
               href={item.href}
-              className="text-sm font-semibold leading-6 text-white"
+              className="text-2xl font-semibold  text-gray-400 hover:text-blue-400 "
+              whileHover={{ scale: 1.2, y: 1 }}
+              variants={linkVariants}
+              initial="initial"
+              animate={controls}
+              style={{ scale: isShrunk ? 0.8 : 1 }}
             >
               {item.name}
-            </a>
+            </motion.a>
           ))}
         </div>
       </nav>
       <Dialog
         as="div"
-        className="lg:hidden"
+        className="lg:hidden "
         open={mobileMenuOpen}
         onClose={setMobileMenuOpen}
       >
         <div className="fixed inset-0 z-10" />
-        <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-grey-900/10">
+        <Dialog.Panel className="fixed bg-black inset-y-0 right-0 md:inset-y-0 z-50 w-full overflow-y-auto px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-grey-900/10">
           <div className="flex items-center justify-between">
             <ComponentLogo
-              size={60}
+              size={100}
               src={"/brigantium-logo.png"}
               alt={"Brigantium logo"}
               href={"#"}
               classNameA="-m-1.5 p-1.5"
             />
-            <button
+            <motion.button
               type="button"
               className="-m-2.5 rounded-md p-2.5 text-gray-700"
               onClick={() => setMobileMenuOpen(false)}
+              whileTap={{ scale: 0.95 }}
             >
               <span className="sr-only">Close menu</span>
-              <XMarkIcon className="h-8 w-8" aria-hidden="true" />
-            </button>
+              <XMarkIcon
+                className="h-10 w-10 text-gray-400 font-bold"
+                aria-hidden="true"
+              />
+            </motion.button>
           </div>
           <div className="mt-6 flow-root">
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
-                {navLinks.map((item) => (
-                  <a
+                {navLinks.map((item, index) => (
+                  <motion.div
                     key={item.name}
-                    href={item.href}
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                    custom={index}
+                    initial="hidden"
+                    animate="visible"
+                    variants={itemVariants}
+                    className="bg-slate-400 rounded-md"
                   >
-                    {item.name}
-                  </a>
+                    <button
+                      className="block w-full p-2.5"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      <a
+                        href={item.href}
+                        className="-mx-3 px-3 py-2 text-xl font-bold text-slate-600"
+                      >
+                        {item.name}
+                      </a>
+                    </button>
+                  </motion.div>
                 ))}
               </div>
             </div>

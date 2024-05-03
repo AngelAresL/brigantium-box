@@ -17,7 +17,7 @@ const SocialLinks: React.FC<SocialLinksProps> = ({ color }) => {
           rel="noopener noreferrer"
         >
           <span className="sr-only">{link.name}</span>
-          <link.icon className="h-6 w-6" aria-hidden="true" />
+          <link.icon className="h-5 w-5" aria-hidden="true" />
         </a>
       ))}
     </div>
