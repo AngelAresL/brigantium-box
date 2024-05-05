@@ -13,7 +13,6 @@ const Header = () => {
   useEffect(() => {
     const handleScroll = () => {
       if (isLargeScreen) {
-        
         if (window.scrollY > 50) {
           if (!isShrunk) {
             setIsShrunk(true);
@@ -29,6 +28,9 @@ const Header = () => {
     };
 
     window.addEventListener("scroll", handleScroll);
+    if (isLargeScreen) {
+      controls.start("appear");
+    }
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -37,10 +39,19 @@ const Header = () => {
 
   const headerVariants = {
     initial: {
+      scale: 0.8,
+      opacity: 0,
+
       height: "100px",
+    },
+    appear: {
+      scale: 1,
+      opacity: 1,
+      transition: { duration: 2 },
     },
     shrink: {
       height: "50px",
+
       transition: {
         duration: 0.5,
       },

@@ -18,7 +18,6 @@ const NavBar: React.FC = () => {
   useEffect(() => {
     const handleScroll = () => {
       if (isLargeScreen) {
-        
         if (window.scrollY > 50) {
           if (!isShrunk) {
             setIsShrunk(true);
@@ -64,15 +63,15 @@ const NavBar: React.FC = () => {
   };
 
   const linkVariants = {
-    initial: { fontSize: 24, color: '#cccccc' },
+    initial: { fontSize: "24px", y: 0 },
     shrink: {
-      fontSize: 18,
-      color: '#999999',
-     
+      fontSize: "18px",
+      y: -30,
+
       transition: {
-        duration: 0.2
-      }
-    }
+        duration: 0.2,
+      },
+    },
   };
 
   return (
@@ -110,7 +109,7 @@ const NavBar: React.FC = () => {
               key={item.name}
               href={item.href}
               className="text-2xl font-semibold  text-gray-400 hover:text-blue-400 "
-              whileHover={{ scale: 1.2, y: 1 }}
+              whileHover={{ scale: 1.2 }}
               variants={linkVariants}
               initial="initial"
               animate={controls}
