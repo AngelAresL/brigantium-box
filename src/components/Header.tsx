@@ -9,6 +9,7 @@ const Header = () => {
   const controls = useAnimation();
   const theme = useTheme();
   const isLargeScreen = useMediaQuery(theme.breakpoints.up("lg"));
+  
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,6 +38,8 @@ const Header = () => {
     };
   }, [isShrunk, controls, isLargeScreen]);
 
+  
+
   const headerVariants = {
     initial: {
       scale: 0.8,
@@ -59,7 +62,7 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-slate-900 fixed top-0 left-0 right-0 z-10">
+    <header className="bg-slate-900 fixed top-0 left-0 right-0 z-50">
       <motion.div
         initial="initial"
         animate={controls}
