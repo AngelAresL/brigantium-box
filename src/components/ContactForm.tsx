@@ -89,7 +89,7 @@ const ContactForm: React.FC = () => {
       <aside className="m-20 text-center">
         <div className="address m-6">
           <ComponentLogo
-            url="https://maps.app.goo.gl/P9KDoJK2iZimi7tR6"
+            href="https://maps.app.goo.gl/P9KDoJK2iZimi7tR6"
             src="/location-logo.svg"
             alt="Location"
             size={36}
@@ -101,7 +101,7 @@ const ContactForm: React.FC = () => {
         </div>
         <div className="phone m-6">
           <ComponentLogo
-            url="tel:666666666"
+            href="tel:666666666"
             src="/phone-logo.svg"
             alt="Phone"
             size={36}
@@ -113,7 +113,7 @@ const ContactForm: React.FC = () => {
         </div>
         <div className="mail m-6">
           <ComponentLogo
-            url="mailto:brigantium@brigantium.com"
+            href="mailto:brigantium@brigantium.com"
             src="/mail-logo.svg"
             alt="Mail"
             size={36}

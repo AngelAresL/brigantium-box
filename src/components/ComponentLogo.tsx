@@ -7,7 +7,6 @@ type ComponentLogoProps = {
   alt: string;
   classNameA?: string;
   classNameImg?: string;
-  url?: string;
 };
 
 const ComponentLogo: React.FC<ComponentLogoProps> = ({
@@ -19,11 +18,7 @@ const ComponentLogo: React.FC<ComponentLogoProps> = ({
   classNameImg,
 }) => {
   return (
-    <a
-      className={classNameA}
-      href={href}
-      
-    >
+    <a className={classNameA} href={href}>
       <Image
         src={src}
         alt={alt}

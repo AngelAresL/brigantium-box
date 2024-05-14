@@ -48,7 +48,7 @@ const NavBar: React.FC = () => {
     shrink: {
       opacity: 0,
       transition: {
-        duration: 0.2,
+        duration: 0,
       },
     },
   };
