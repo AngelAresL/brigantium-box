@@ -8,6 +8,7 @@ import { useEffect } from "react";
 import Presentation from "@/components/Presentation";
 
 import Activities from "@/components/Activities";
+import About from "@/components/About";
 
 const Home = () => {
   // useEffect(() => {
@@ -70,7 +71,9 @@ const Home = () => {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
           potenti. Sed volutpat est vel augue interdum, at varius enim cursus.
         </p>
-        <h2 id="about">Sección 3: Subtítulo</h2>
+        <div id="about">
+          <About />
+        </div>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
           potenti. Sed volutpat est vel augue interdum, at varius enim cursus.
