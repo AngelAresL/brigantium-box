@@ -1,14 +1,18 @@
 import Image from "next/image";
+
 const Schedule = () => {
   return (
     <div className="flex flex-col justify-center items-center m-20">
-      <Image
-        className=""
-        src="/schedule.jpg"
-        alt="calendario semanal"
-        width={960}
-        height={300}
-      />
+      <div className="w-full max-w-screen-lg">
+        <Image
+          src="/schedule.jpg"
+          alt="calendario semanal"
+          layout="responsive"
+          width={1920}
+          height={1080}
+          className="object-cover"
+        />
+      </div>
       <a
         href="https://google.com"
         target="_blank"
@@ -20,4 +24,5 @@ const Schedule = () => {
     </div>
   );
 };
+
 export default Schedule;
