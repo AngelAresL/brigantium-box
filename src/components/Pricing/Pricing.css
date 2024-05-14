@@ -12,7 +12,7 @@
   width: 30vw;
   max-width: 350px;
   height: 60vh;
-  z-index: 50;
+  z-index: 30;
   perspective: 2000px;
   margin: 0;
 }

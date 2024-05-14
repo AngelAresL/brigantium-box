@@ -9,7 +9,6 @@ const Header = () => {
   const controls = useAnimation();
   const theme = useTheme();
   const isLargeScreen = useMediaQuery(theme.breakpoints.up("lg"));
-  
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,8 +36,6 @@ const Header = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [isShrunk, controls, isLargeScreen]);
-
-  
 
   const headerVariants = {
     initial: {
