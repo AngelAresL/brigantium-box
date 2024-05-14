@@ -14,7 +14,7 @@ const Schedule = () => {
         />
       </div>
       <a
-        href="https://google.com"
+        href="https://brigantium.wodbuster.com/user/"
         target="_blank"
         rel="noopener noreferrer"
         className="bg-gray-800 text-white font-medium p-2 mt-4 rounded-lg hover:bg-gray-600 transition duration-200"
