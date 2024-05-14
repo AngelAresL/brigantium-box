@@ -9,6 +9,7 @@ import Presentation from "@/components/Presentation";
 
 import Activities from "@/components/Activities";
 import About from "@/components/About";
+import Schedule from "@/components/Schedule";
 
 const Home = () => {
   // useEffect(() => {
@@ -19,11 +20,8 @@ const Home = () => {
       <Presentation />
 
       <Activities />
-      <div>
-        <h2 className="text-4xl font-bold text-center mt-10">
-          Horarios y Clases
-        </h2>
-      </div>
+
+      <Schedule />
 
       <div>
         <h1>Sección 1: Título Principal</h1>
