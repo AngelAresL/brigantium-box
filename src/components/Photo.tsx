@@ -7,16 +7,12 @@ export type PhotoProps = {
 
 const Photo: React.FC<PhotoProps> = ({ src, alt }: PhotoProps) => {
   return (
-   
-      <Image
-        src={src}
-        alt={alt}
-        loading="lazy"
-        
-        objectFit="cover"
-        className="transition duration-300 ease-in-out transform group-hover:scale-110"
-      />
-    
+    <Image
+      src={src}
+      alt={alt}
+      loading="lazy"
+      className="transition duration-300 ease-in-out transform group-hover:scale-110 object-cover"
+    />
   );
 };
 export default Photo;

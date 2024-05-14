@@ -24,7 +24,6 @@ const ComponentLogo: React.FC<ComponentLogoProps> = ({
         alt={alt}
         width={size}
         height={size}
-        layout="fixed"
         className={classNameImg}
       />
     </a>

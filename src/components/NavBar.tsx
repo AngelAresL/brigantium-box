@@ -41,6 +41,13 @@ const NavBar: React.FC = () => {
     };
   }, [isShrunk, controls, isLargeScreen]);
 
+  useEffect(() => {
+    if (!isLargeScreen) {
+      setIsShrunk(false);
+      controls.start("initial");
+    }
+  }, [isLargeScreen, controls]);
+
   const logoVariants = {
     initial: {
       opacity: 1,
@@ -89,8 +96,8 @@ const NavBar: React.FC = () => {
             size={80}
             src={"/brigantium-logo.png"}
             alt={"Brigantium logo"}
-            href={"#"}
-            classNameA="-m-1.5 p-1.5 "
+            href={"/"}
+            classNameA="-m-1.5 p-1.5 translate-y-[-8px]"
           />
         </motion.div>
         <div className="flex py-4 lg:hidden">

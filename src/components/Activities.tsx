@@ -56,9 +56,9 @@ const Activities = () => {
             <div className="-mx-4 flex overflow-x-auto sm:mx-0">
               <div className="flex-auto border-b border-gray-200 px-4 sm:px-0">
                 <Tab.List className="-mb-px flex space-x-10">
-                  {activities.map((activity, index) => (
+                  {activities.map((activity) => (
                     <Tab
-                      key={index}
+                      key={activity.name}
                       className={({ selected }) =>
                         classNames(
                           selected
@@ -76,8 +76,11 @@ const Activities = () => {
             </div>
 
             <Tab.Panels as={Fragment}>
-              {activities.map((activity, index) => (
-                <Tab.Panel key={index} className="space-y-16 pt-10 lg:pt-16">
+              {activities.map((activity) => (
+                <Tab.Panel
+                  key={activity.name}
+                  className="space-y-16 pt-10 lg:pt-16"
+                >
                   {activity.features.map((feature) => (
                     <div
                       key={feature.name}
@@ -85,6 +88,7 @@ const Activities = () => {
                     >
                       <AnimatePresence mode="wait">
                         <motion.div
+                          key={feature.name + "-description"}
                           variants={tabVariants}
                           initial="initial"
                           animate="in"
@@ -100,6 +104,7 @@ const Activities = () => {
                           </p>
                         </motion.div>
                         <motion.div
+                          key={feature.name + "-image"}
                           variants={tabVariants}
                           initial="out"
                           animate="in"
@@ -111,9 +116,9 @@ const Activities = () => {
                             <Image
                               src={feature.imageSrc}
                               alt={feature.imageAlt}
-                              width={500}
-                              height={300}
-                              className="object-cover object-center "
+                              fill
+                              sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
+                              className="object-cover object-center"
                             />
                           </div>
                         </motion.div>

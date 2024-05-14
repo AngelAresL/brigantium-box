@@ -23,29 +23,29 @@ import { useState } from "react";
 type PhotoInfo = {
   src: StaticImageData;
   alt: string;
+  orientation: "horizontal" | "vertical";
 };
 
 export const photos: PhotoInfo[] = [
-  { src: foto1, alt: "Description of photo 1" },
-  { src: foto2, alt: "Description of photo 2" },
-  { src: foto3, alt: "Description of photo 3" },
-  { src: foto4, alt: "Description of photo 4" },
-  { src: foto5, alt: "Description of photo 5" },
-  { src: foto6, alt: "Description of photo 6" },
-  { src: foto3, alt: "Description of photo 3" },
-  { src: foto4, alt: "Description of photo 4" },
-  { src: foto5, alt: "Description of photo 5" },
-  { src: foto6, alt: "Description of photo 6" },
-  { src: foto1, alt: "Description of photo 1" },
-  { src: foto2, alt: "Description of photo 2" },
-  { src: foto3, alt: "Description of photo 3" },
-  { src: foto4, alt: "Description of photo 4" },
-  { src: foto5, alt: "Description of photo 5" },
-  { src: foto6, alt: "Description of photo 6" },
-  { src: foto3, alt: "Description of photo 3" },
-  { src: foto4, alt: "Description of photo 4" },
-  { src: foto6, alt: "Description of photo 6" },
-  { src: foto6, alt: "Description of photo 6" },
+  { src: foto1, alt: "Description of photo 1", orientation: "horizontal" },
+  { src: foto2, alt: "Description of photo 2", orientation: "horizontal" },
+  { src: foto3, alt: "Description of photo 3", orientation: "horizontal" },
+  { src: foto4, alt: "Description of photo 4", orientation: "vertical" },
+  { src: foto5, alt: "Description of photo 5", orientation: "vertical" },
+  { src: foto6, alt: "Description of photo 6", orientation: "horizontal" },
+  { src: foto4, alt: "Description of photo 4", orientation: "vertical" },
+  { src: foto2, alt: "Description of photo 2", orientation: "horizontal" },
+  { src: foto3, alt: "Description of photo 3", orientation: "horizontal" },
+  { src: foto4, alt: "Description of photo 4", orientation: "vertical" },
+  { src: foto4, alt: "Description of photo 4", orientation: "vertical" },
+  { src: foto1, alt: "Description of photo 1", orientation: "horizontal" },
+  { src: foto2, alt: "Description of photo 2", orientation: "horizontal" },
+  { src: foto3, alt: "Description of photo 3", orientation: "horizontal" },
+  { src: foto4, alt: "Description of photo 4", orientation: "vertical" },
+  { src: foto5, alt: "Description of photo 5", orientation: "vertical" },
+  { src: foto6, alt: "Description of photo 6", orientation: "horizontal" },
+  { src: foto2, alt: "Description of photo 2", orientation: "horizontal" },
+  { src: foto1, alt: "Description of photo 1", orientation: "horizontal" },
 ];
 
 const PhotoGallery = () => {
@@ -69,16 +69,17 @@ const PhotoGallery = () => {
   const [selectedPhoto, setSelectedPhoto] = useState<{
     src: StaticImageData;
     alt: string;
+    orientation: "horizontal" | "vertical";
   } | null>(null);
 
   const modalVariants = {
     hidden: {
       opacity: 0,
-      scale: 0.5,
+      scale: 0,
     },
     visible: {
       opacity: 1,
-      scale: 50,
+      scale: 0.8,
       transition: {
         type: "spring",
         damping: 20,
@@ -87,7 +88,7 @@ const PhotoGallery = () => {
     },
     exit: {
       opacity: 0,
-      scale: 0.5,
+      scale: 0,
       transition: { duration: 0.3 },
     },
   };
@@ -126,30 +127,32 @@ const PhotoGallery = () => {
             aria-labelledby="modal-modal-title"
             aria-describedby="modal-modal-description"
           >
-            <Box className="flex justify-center items-center h-screen ">
-              <motion.div
-                variants={modalVariants}
-                initial="hidden"
-                animate="visible"
-                exit="exit"
-                className="  p-2 max-w-4xl max-h-full flex justify-center items-center relative overflow-y-auto"
-              >
-                {selectedPhoto && (
-                  <Image
-                    src={selectedPhoto.src}
-                    alt={selectedPhoto.alt}
-                    layout="fill"
-                    objectFit="contain"
-                  />
-                )}
-              </motion.div>
+            <motion.div
+              variants={modalVariants}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+              className={`flex justify-center items-center  mx-auto my-auto${
+                selectedPhoto.orientation === "horizontal"
+                  ? "w-full h-3/4 md:h-full"
+                  : "max-w-xl h-full"
+              } `}
+            >
+              {selectedPhoto && (
+                <Image
+                  src={selectedPhoto.src}
+                  alt={selectedPhoto.alt}
+                  fill
+                  className="relative object-cover "
+                />
+              )}
               <button
                 onClick={() => setSelectedPhoto(null)}
-                className="absolute top-0 right-0 text-white text-2xl p-4"
+                className="absolute -top-20 right-0 text-white text-4xl p-4"
               >
                 ✕
               </button>
-            </Box>
+            </motion.div>
           </Modal>
         )}
       </AnimatePresence>

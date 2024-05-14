@@ -37,18 +37,18 @@ const Header = () => {
     };
   }, [isShrunk, controls, isLargeScreen]);
 
+  useEffect(() => {
+    if (!isLargeScreen) {
+      setIsShrunk(false);
+      controls.start("initial");
+    }
+  }, [isLargeScreen, controls]);
+
   const headerVariants = {
     initial: {
-      scale: 0.8,
-      opacity: 0,
-
       height: "100px",
     },
-    appear: {
-      scale: 1,
-      opacity: 1,
-      transition: { duration: 2 },
-    },
+
     shrink: {
       height: "50px",
 
