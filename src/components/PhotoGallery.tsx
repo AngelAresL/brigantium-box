@@ -134,8 +134,8 @@ const PhotoGallery = () => {
               exit="exit"
               className={`flex justify-center items-center  mx-auto my-auto${
                 selectedPhoto.orientation === "horizontal"
-                  ? "w-full h-3/4 md:h-full"
-                  : "max-w-xl h-full"
+                  ? "w-full  h-2/5 md:h-full"
+                  : "w-2/4 h-full md:w-6/12"
               } `}
             >
               {selectedPhoto && (

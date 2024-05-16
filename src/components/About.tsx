@@ -17,13 +17,13 @@ const people = [
 
 const About = () => {
   return (
-    <div className="bg-white py-24 md:py-32 lg:py-40">
+    <div className="bg-[url('/brigantium_wallpaper_gradient.png')] bg-cover  py-20 lg:py-40">
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-3">
         <div className="mx-auto max-w-2xl lg:mx-0">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            Our team
+            Equipo
           </h2>
-          <p className="mt-6 text-lg leading-8 text-gray-600">
+          <p className="mt-6 text-lg leading-8 text-gray-800">
             Nuestro equipo se compone de profesionales que siempre han estado
             ligados al deporte. Contamos con entrenadores con estudios en Inef,
             competidores y entrenadores de crostraining con amplia experiencia y
@@ -43,18 +43,20 @@ const About = () => {
         >
           {people.map((person) => (
             <li key={person.name}>
-              <Image
-                className="aspect-[2/3] w-full rounded-2xl object-cover"
-                src={person.imageUrl}
-                alt=""
-                width={90}
-                height={90}
-              />
-              <h3 className="mt-6 text-lg font-semibold leading-8 text-gray-900">
+              <div className="bg-zinc-100 p-2 shadow-2xl shadow-slate-800 ">
+                <Image
+                  className="aspect-[2/3] w-full  rounded-sm shadow-md shadow-black object-cover transition-transform duration-300 hover:scale-110"
+                  src={person.imageUrl}
+                  alt=""
+                  width={90}
+                  height={90}
+                />
+              </div>
+              <h3 className="mt-6 text-lg font-semibold leading-8 text-gray-400">
                 {person.name}
               </h3>
-              <p className="text-base leading-7 text-gray-600">{person.role}</p>
-              <p className="mt-4 text-base leading-7 text-gray-600">
+              <p className="text-base leading-7 text-gray-300">{person.role}</p>
+              <p className="mt-4 text-base leading-7 text-gray-400">
                 {person.bio}
               </p>
             </li>

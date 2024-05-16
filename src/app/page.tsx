@@ -17,8 +17,12 @@ const Home = () => {
   return (
     <>
       <Presentation />
-
-      <Activities />
+      <div id="activities">
+        <Activities />
+      </div>
+      <div id="about">
+          <About />
+        </div>
       <div>
         <h2 className="text-4xl font-bold text-center mt-10">
           Horarios y Clases
@@ -71,9 +75,7 @@ const Home = () => {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
           potenti. Sed volutpat est vel augue interdum, at varius enim cursus.
         </p>
-        <div id="about">
-          <About />
-        </div>
+       
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
           potenti. Sed volutpat est vel augue interdum, at varius enim cursus.
