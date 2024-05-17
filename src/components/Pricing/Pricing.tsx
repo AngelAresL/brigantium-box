@@ -2,7 +2,7 @@ import "./Pricing.css";
 
 const Pricing = () => {
   return (
-    <div className="grid-pricing" id="pricing">
+    <div className="grid-pricing py-32" id="pricing">
       <div className="flip-pricing">
         <div className="flip-pricing-inner">
           <div
