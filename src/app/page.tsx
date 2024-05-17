@@ -9,6 +9,7 @@ import Presentation from "@/components/Presentation";
 
 import Activities from "@/components/Activities";
 import About from "@/components/About";
+import ReviewsCarousel from "@/components/ReviewCarousel";
 
 const Home = () => {
   // useEffect(() => {
@@ -19,7 +20,11 @@ const Home = () => {
       <Presentation />
 
       <Activities />
-      <div>
+   
+        <ReviewsCarousel />
+  
+
+      <div className="bg-black">
         <h2 className="text-4xl font-bold text-center mt-10">
           Horarios y Clases
         </h2>
