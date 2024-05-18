@@ -1,17 +1,22 @@
 import Image from "next/image";
+import Zoom from "react-medium-image-zoom";
+import "react-medium-image-zoom/dist/styles.css";
 
 const Schedule = () => {
   return (
     <div className="flex flex-col justify-center items-center m-20">
       <div className="w-full max-w-screen-lg">
-        <Image
-          src="/schedule.jpg"
-          alt="calendario semanal"
-          layout="responsive"
-          width={1920}
-          height={1080}
-          className="object-cover"
-        />
+        <Zoom>
+          <Image
+            src="/schedule.jpg"
+            alt="calendario semanal"
+            layout="responsive"
+            width={1920}
+            height={1080}
+            style={{ width: "100%", cursor: "zoom-in" }}
+            className="object-cover"
+          />
+        </Zoom>
       </div>
       <a
         href="https://brigantium.wodbuster.com/user/"
