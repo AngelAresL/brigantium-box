@@ -8,20 +8,21 @@ import reviews from "../data/reviews";
 
 const ReviewsCarousel = () => {
   const [emblaRef] = useEmblaCarousel({ loop: true }, [
-    Autoplay({ delay: 2500 }),
+    Autoplay({ delay: 3500 }),
   ]);
 
   return (
-    <section className="mx-auto w-11/12 py-16">
+    <section className="mx-auto bg-blue-200">
+      <h2 className="flex justify-center md:block pt-10 px-10 text-lg font-bold">Que opinan nuestros clientes</h2>
       <div className="overflow-hidden" ref={emblaRef}>
-        <div className="embla__container flex">
+        <div className="flex">
           {reviews.map((review, index) => (
             <div
-              className="shrink-0 grow-0 basis-9/12  space-x-2 size-full"
+              className="shrink-0 grow-0 size-full"
               key={index}
             >
-              <div className="flex justify-center items-center h-96">
-                <div className=" bg-white px-6 py-24 sm:py-32 lg:px-8">
+              <div className="flex justify-center items-center ">
+                <div className=" px-6 pt-14 pb-16 g:px-8">
                   <div className="flex gap-x-1 text-yellow-200">
                     <StarIcon
                       className="h-5 w-5 flex-none"
@@ -45,7 +46,7 @@ const ReviewsCarousel = () => {
                     />
                   </div>
 
-                  <p className="mt-10 text-xl font-semibold leading-8 tracking-tight text-gray-900 sm:text-2xl sm:leading-9">
+                  <p className="mt-10 text-xl font-semibold italic leading-8 tracking-tight text-gray-900 sm:text-2xl sm:leading-9">
                     {review.text}
                   </p>
 
