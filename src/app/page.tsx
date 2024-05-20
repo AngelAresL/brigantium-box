@@ -10,6 +10,7 @@ import Presentation from "@/components/Presentation";
 import Activities from "@/components/Activities";
 import About from "@/components/About";
 import Schedule from "@/components/Schedule";
+import ReviewsCarousel from "@/components/ReviewCarousel";
 
 const Home = () => {
   // useEffect(() => {
@@ -45,8 +46,14 @@ const Home = () => {
 
       <Schedule />
 
-      <div id="contact">
-        <ContactForm />
+      <ReviewsCarousel />
+
+      <div className="bg-black">
+        <div id="contact">
+          <ContactForm />
+        </div>
+
+        <Pricing />
       </div>
 
       <Pricing />
