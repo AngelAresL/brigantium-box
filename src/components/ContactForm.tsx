@@ -1,5 +1,6 @@
 "use client";
 import { FormEvent, useState } from "react";
+import emailjs from "emailjs-com";
 import ComponentLogo from "./ComponentLogo";
 
 const ContactForm: React.FC = () => {
@@ -7,11 +8,43 @@ const ContactForm: React.FC = () => {
   const [surName, setSurName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [isSending, setIsSending] = useState(false);
+  const [isSent, setIsSent] = useState(false);
+  const [isMessageVisible, setIsMessageVisible] = useState(false);
 
   const sendMail = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("Mensaje enviado correctamente");
+    setIsSending(true);
+
+    const templateParams = {
+      name,
+      surName,
+      email,
+      message,
+    };
+
+    emailjs
+      .send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID as string,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID as string,
+        templateParams,
+        process.env.NEXT_PUBLIC_EMAILJS_USER_ID as string
+      )
+      .then((response) => {
+        console.log("SUCCESS!", response.status, response.text);
+        setIsSending(false);
+        setIsSent(true);
+        setIsMessageVisible(true);
+        setTimeout(() => {
+          setIsMessageVisible(false);
+        }, 5000);
+      })
+      .catch((err) => {
+        console.error("FAILED...", err);
+        setIsSending(false);
+      });
   };
+
   return (
     <div className="flex justify-center items-center min-h-screen p-4">
       <div className="w-96 bg-white p-6 rounded-lg shadow-lg">
@@ -28,6 +61,7 @@ const ContactForm: React.FC = () => {
               value={name}
               onChange={(e) => setName(e.target.value)}
               className="mt-1 block w-full p-2 border border-gray-300 rounded-lg"
+              required
             />
           </div>
 
@@ -45,6 +79,7 @@ const ContactForm: React.FC = () => {
               value={surName}
               onChange={(e) => setSurName(e.target.value)}
               className="mt-1 block w-full p-2 border border-gray-300 rounded-lg"
+              required
             />
           </div>
 
@@ -59,6 +94,7 @@ const ContactForm: React.FC = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className="mt-1 block w-full p-2 border border-gray-300 rounded-lg"
+              required
             />
           </div>
 
@@ -75,16 +111,23 @@ const ContactForm: React.FC = () => {
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               className="mt-1 block w-full p-2 border border-gray-300 rounded-lg h-24"
+              required
             ></textarea>
           </div>
 
           <button
             type="submit"
             className="bg-gray-800 text-white font-medium p-2 rounded-lg hover:bg-gray-600 transition duration-200"
+            disabled={isSending}
           >
-            Enviar
+            {isSending ? "Enviando..." : "Enviar"}
           </button>
         </form>
+        {isMessageVisible && (
+          <p className="text-green-500 text-center mt-4">
+            Mensaje enviado correctamente!
+          </p>
+        )}
       </div>
       <aside className="m-20 text-center">
         <div className="address m-6">
@@ -98,11 +141,11 @@ const ContactForm: React.FC = () => {
             classNameImg="m-4 rounded-md transition duration-150 ease-in-out transform hover:scale-125"
           />
           <h3>Dirección</h3>
-          <p>C/ Que flipas, 123, 15002, A Coruña, España</p>
+          <p>{process.env.NEXT_PUBLIC_ADDRESS}</p>
         </div>
         <div className="phone m-6">
           <ComponentLogo
-            href="tel:666666666"
+            href={`tel:${process.env.NEXT_PUBLIC_TEL}`}
             src="/phone-logo.svg"
             alt="Phone"
             size={36}
@@ -110,11 +153,11 @@ const ContactForm: React.FC = () => {
             classNameImg="m-4 rounded-md transition duration-150 ease-in-out transform hover:scale-125"
           />
           <h3>Teléfono</h3>
-          <p>666 66 66 66</p>
+          <p>{process.env.NEXT_PUBLIC_TEL}</p>
         </div>
         <div className="mail m-6">
           <ComponentLogo
-            href="mailto:brigantium@brigantium.com"
+            href={`mailto:${process.env.NEXT_PUBLIC_EMAIL}`}
             src="/mail-logo.svg"
             alt="Mail"
             size={36}
@@ -123,7 +166,7 @@ const ContactForm: React.FC = () => {
           />
 
           <h3>Email</h3>
-          <p>brigantium@brigantium.com</p>
+          <p>{process.env.NEXT_PUBLIC_EMAIL}</p>
         </div>
       </aside>
     </div>
