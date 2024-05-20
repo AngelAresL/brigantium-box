@@ -91,6 +91,7 @@ const ContactForm: React.FC = () => {
           <ComponentLogo
             href="https://maps.app.goo.gl/P9KDoJK2iZimi7tR6"
             src="/location-logo.svg"
+            target="_blank"
             alt="Location"
             size={36}
             classNameA="flex justify-center items-center"
