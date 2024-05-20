@@ -1,14 +1,12 @@
-
-
 const WhatsAppButton: React.FC = () => {
-  const whatsappNumber = "34680576629"; 
+  const whatsappNumber = "34680576629";
 
   return (
     <a
       href={`https://wa.me/${whatsappNumber}`}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-4 right-4 bg-green-700 text-white p-3 rounded-full shadow-lg hover:bg-green-800  hover:scale-105 transition-colors"
+      className="fixed bottom-4 left-4 bg-green-700 text-white p-3 rounded-full shadow-lg hover:bg-green-800  hover:scale-105 transition-colors"
       aria-label="WhatsApp Chat"
     >
       <svg

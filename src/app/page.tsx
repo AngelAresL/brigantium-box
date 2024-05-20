@@ -48,15 +48,13 @@ const Home = () => {
 
       <ReviewsCarousel />
 
-      <div className="bg-black">
+      <div>
         <div id="contact">
           <ContactForm />
         </div>
 
         <Pricing />
       </div>
-
-      <Pricing />
 
       {showScrollButton && (
         <button
