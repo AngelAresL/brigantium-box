@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { Inter, Poppins,Raleway } from "next/font/google";
+import { Inter, Poppins, Raleway } from "next/font/google";
 import "./globals.css";
 import Header from "../components/Header";
 import Footer from "@/components/Footer";
+import WhatsAppButton from "../components/WhatsAppButton";
 
 const inter = Inter({ subsets: ["latin"] });
 const raleway = Raleway({ subsets: ["latin"] });
@@ -22,8 +23,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={raleway.className}>
         <Header />
-        <div >{children}</div>
-        
+        <div>{children}</div>
+        <WhatsAppButton />
+
         <Footer />
       </body>
     </html>

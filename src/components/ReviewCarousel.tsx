@@ -12,7 +12,7 @@ const ReviewsCarousel = () => {
   ]);
 
   return (
-    <section className="mx-auto bg-blue-200">
+    <section className="mx-auto px-24 bg-blue-200">
       <h2 className="flex justify-center md:block pt-10 px-10 text-lg font-bold">Que opinan nuestros clientes</h2>
       <div className="overflow-hidden" ref={emblaRef}>
         <div className="flex">
