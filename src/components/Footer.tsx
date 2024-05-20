@@ -1,13 +1,13 @@
+import Link from "next/link";
+
 import SocialLinks from "./SocialLinks";
 
 const navigation = {
   main: [
-    { name: "About", href: "#" },
-    { name: "Blog", href: "#" },
-    { name: "Jobs", href: "#" },
-    { name: "Press", href: "#" },
-    { name: "Accessibility", href: "#" },
-    { name: "Partners", href: "#" },
+    { name: "Contacto", href: "#contact" },
+    { name: "Nosotros", href: "#about" },
+    { name: "Servicios", href: "#activities" },
+    { name: "Tarifas", href: "#pricing" },
   ],
 };
 
@@ -34,7 +34,10 @@ const Footer = () => {
           <SocialLinks color={"rgb(156 163 175)"} />
         </div>
         <p className="mt-10 text-center text-xs leading-5 text-gray-500">
-          &copy; 2020 Your Company, Inc. All rights reserved.
+          &copy; BrigantiumBox 2024. Todos los derechos reservados.
+          <Link href="/aviso-legal" className="hover:text-blue-400 ml-4">
+            Aviso Legal
+          </Link>
         </p>
       </div>
     </footer>
