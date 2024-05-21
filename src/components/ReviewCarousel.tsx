@@ -3,7 +3,7 @@
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { StarIcon } from "@heroicons/react/20/solid";
-import "./ReviewCarousel.css";
+
 import reviews from "../data/reviews";
 
 const ReviewsCarousel = () => {
@@ -13,14 +13,13 @@ const ReviewsCarousel = () => {
 
   return (
     <section className="mx-auto px-24 bg-blue-200">
-      <h2 className="flex justify-center md:block pt-10 px-10 text-lg font-bold">Que opinan nuestros clientes</h2>
+      <h2 className="flex justify-center md:block pt-10 px-10 text-lg font-bold">
+        Que opinan nuestros clientes
+      </h2>
       <div className="overflow-hidden" ref={emblaRef}>
         <div className="flex">
           {reviews.map((review, index) => (
-            <div
-              className="shrink-0 grow-0 size-full"
-              key={index}
-            >
+            <div className="shrink-0 grow-0 size-full" key={index}>
               <div className="flex justify-center items-center ">
                 <div className=" px-6 pt-14 pb-16 g:px-8">
                   <div className="flex gap-x-1 text-yellow-200">

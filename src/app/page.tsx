@@ -1,7 +1,7 @@
 "use client";
 import ContactForm from "@/components/ContactForm";
 import Pricing from "@/components/Pricing/Pricing";
-import Image from "next/image";
+
 import "./globals.css";
 import { useEffect, useState } from "react";
 
@@ -13,9 +13,6 @@ import Schedule from "@/components/Schedule";
 import ReviewsCarousel from "@/components/ReviewCarousel";
 
 const Home = () => {
-  // useEffect(() => {
-  //   window.scrollTo(0, 0);
-  // }, []);
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => {

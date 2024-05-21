@@ -39,13 +39,14 @@ export const photos: PhotoInfo[] = [
   { src: foto4, alt: "Description of photo 4", orientation: "vertical" },
   { src: foto4, alt: "Description of photo 4", orientation: "vertical" },
   { src: foto1, alt: "Description of photo 1", orientation: "horizontal" },
+  { src: foto6, alt: "Description of photo 6", orientation: "horizontal" },
+  { src: foto2, alt: "Description of photo 2", orientation: "horizontal" },
+  { src: foto1, alt: "Description of photo 1", orientation: "horizontal" },
   { src: foto2, alt: "Description of photo 2", orientation: "horizontal" },
   { src: foto3, alt: "Description of photo 3", orientation: "horizontal" },
   { src: foto4, alt: "Description of photo 4", orientation: "vertical" },
   { src: foto5, alt: "Description of photo 5", orientation: "vertical" },
-  { src: foto6, alt: "Description of photo 6", orientation: "horizontal" },
-  { src: foto2, alt: "Description of photo 2", orientation: "horizontal" },
-  { src: foto1, alt: "Description of photo 1", orientation: "horizontal" },
+  { src: foto5, alt: "Description of photo 5", orientation: "vertical" },
 ];
 
 const PhotoGallery = () => {
@@ -96,12 +97,13 @@ const PhotoGallery = () => {
   return (
     <>
       <Box sx={{ width: "100%", height: "100%" }}>
-        <ImageList variant="masonry" cols={getCols()} gap={5}>
+        <ImageList variant="masonry" cols={getCols()} gap={8}>
           {photos.map((photo, index) => (
             <ImageListItem
               key={index}
               onClick={() => setSelectedPhoto(photo)}
               className="group w-full h-full overflow-hidden cursor-pointer relative"
+            
             >
               <div
                 onClick={() => setSelectedPhoto(photo)}
@@ -132,23 +134,21 @@ const PhotoGallery = () => {
               initial="hidden"
               animate="visible"
               exit="exit"
-              className={`flex justify-center items-center  mx-auto my-auto${
-                selectedPhoto.orientation === "horizontal"
-                  ? "w-full  h-2/5 md:h-full"
-                  : "w-2/4 h-full md:w-6/12"
-              } `}
+              className="flex justify-center items-center  mx-auto my-auto w-full h-full"
             >
               {selectedPhoto && (
-                <Image
-                  src={selectedPhoto.src}
-                  alt={selectedPhoto.alt}
-                  fill
-                  className="relative object-cover "
-                />
+                <div className="">
+                  <Image
+                    src={selectedPhoto.src}
+                    alt={selectedPhoto.alt}
+                    fill
+                    className="relative object-contain  "
+                  />
+                </div>
               )}
               <button
                 onClick={() => setSelectedPhoto(null)}
-                className="absolute -top-20 right-0 text-white text-4xl p-4"
+                className="absolute -top-20 right-0  text-white text-4xl "
               >
                 ✕
               </button>

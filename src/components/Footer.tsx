@@ -11,7 +11,7 @@ const navigation = {
   ],
 };
 
-const Footer = () => {
+const Footer:React.FC = () => {
   return (
     <footer className="bg-slate-900">
       <div className="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8">
