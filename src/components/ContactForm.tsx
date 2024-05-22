@@ -46,8 +46,8 @@ const ContactForm: React.FC = () => {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen p-4">
-      <div className="w-96 bg-white p-6 rounded-lg shadow-lg">
+    <div className="flex flex-col lg:flex-row justify-center items-center min-h-screen p-4 my-10">
+      <div className="w-full max-w-lg bg-white p-6 rounded-lg shadow-lg relative mx-4">
         <h1 className="text-2xl font-bold text-center mb-4">Contáctanos!</h1>
         <form onSubmit={sendMail} className="flex flex-col space-y-4">
           <div>
@@ -123,11 +123,13 @@ const ContactForm: React.FC = () => {
             {isSending ? "Enviando..." : "Enviar"}
           </button>
         </form>
-        {isMessageVisible && (
-          <p className="text-green-500 text-center mt-4">
-            Mensaje enviado correctamente!
-          </p>
-        )}
+        <div className="h-6 mt-4">
+          {isMessageVisible && (
+            <p className="text-green-500 text-center">
+              Mensaje enviado correctamente!
+            </p>
+          )}
+        </div>
       </div>
       <aside className="m-20 text-center">
         <div className="address m-6">
