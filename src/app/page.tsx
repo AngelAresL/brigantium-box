@@ -12,10 +12,10 @@ import About from "@/components/About";
 import Schedule from "@/components/Schedule";
 import ReviewsCarousel from "@/components/ReviewCarousel";
 
-const Home = () => {
-  // useEffect(() => {
-  //   window.scrollTo(0, 0);
-  // }, []);
+const Home: React.FC = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => {
@@ -29,6 +29,7 @@ const Home = () => {
   const handleScroll = () => {
     setShowScrollButton(window.scrollY > 300);
   };
+  const [contactMessage, setContactMessage] = useState("");
   return (
     <>
       <Presentation />
@@ -50,10 +51,10 @@ const Home = () => {
 
       <div>
         <div id="contact">
-          <ContactForm />
+          <ContactForm contactMessage={contactMessage} />
         </div>
 
-        <Pricing />
+        <Pricing setContactMessage={setContactMessage} />
       </div>
 
       {showScrollButton && (

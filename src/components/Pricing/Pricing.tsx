@@ -1,6 +1,14 @@
 import "./Pricing.css";
 
-const Pricing = () => {
+interface PricingProps {
+  setContactMessage: (message: string) => void;
+}
+
+const Pricing: React.FC<PricingProps> = ({ setContactMessage }) => {
+  const handleContactClick = (message: string) => {
+    setContactMessage(message);
+    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+  };
   return (
     <div className="grid-pricing py-32" id="pricing">
       <div className="flip-pricing">
@@ -28,6 +36,9 @@ const Pricing = () => {
             <button
               type="submit"
               className="bg-gray-800 text-white font-medium p-2 rounded-lg hover:bg-gray-600 transition duration-200 w-full"
+              onClick={() =>
+                handleContactClick("Buenas! Me interesaría el Plan 1 RX.")
+              }
             >
               Contacto
             </button>
@@ -60,6 +71,9 @@ const Pricing = () => {
             <button
               type="submit"
               className="bg-gray-800 text-white font-medium p-2 rounded-lg hover:bg-gray-600 transition duration-200 w-full"
+              onClick={() =>
+                handleContactClick("Buenas! Me interesaría el Plan 2 PRO.")
+              }
             >
               Contacto
             </button>
@@ -92,6 +106,9 @@ const Pricing = () => {
             <button
               type="submit"
               className="bg-gray-800 text-white font-medium p-2 rounded-lg hover:bg-gray-600 transition duration-200 w-full"
+              onClick={() =>
+                handleContactClick("Buenas! Me interesaría el Plan 3 ÉLITE.")
+              }
             >
               Contacto
             </button>

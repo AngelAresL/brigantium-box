@@ -1,16 +1,25 @@
 "use client";
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import emailjs from "emailjs-com";
 import ComponentLogo from "./ComponentLogo";
 
-const ContactForm: React.FC = () => {
+interface ContactFormProps {
+  contactMessage: string;
+}
+
+const ContactForm: React.FC<ContactFormProps> = ({ contactMessage }) => {
   const [name, setName] = useState("");
   const [surName, setSurName] = useState("");
   const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
+  const [message, setMessage] = useState(contactMessage);
+
   const [isSending, setIsSending] = useState(false);
   const [isSent, setIsSent] = useState(false);
   const [isMessageVisible, setIsMessageVisible] = useState(false);
+
+  useEffect(() => {
+    setMessage(contactMessage);
+  }, [contactMessage]);
 
   const sendMail = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
