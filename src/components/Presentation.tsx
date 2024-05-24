@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 const Presentation = () => {
   return (
     <>
-      <div className="bg-[url('/backgroundPresentation.jpg')] h-screen bg-cover bg-no-repeat bg-top pt-24">
+      <div className="bg-black h-screen bg-cover bg-no-repeat bg-top pt-24">
         <div className=" mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
           <div className="text-center">
             <h1 className="text-6xl font-bold tracking-tight text-white lg:text-7xl">
