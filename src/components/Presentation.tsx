@@ -12,7 +12,7 @@ const Presentation = () => {
         <div className=" mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
           <div className="text-center">
             <h1 className="text-6xl font-bold tracking-tight text-white lg:text-7xl">
-              Brigantium Box
+              Brigantium Bo
             </h1>
             <p className="mt-6 text-lg leading-8 text-black bg-blue-300 bg-opacity-30">
               Si estás visitando nuestra página, algo en ti ya ha cambiado.
