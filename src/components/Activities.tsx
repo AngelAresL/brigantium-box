@@ -48,7 +48,7 @@ const Activities: React.FC = () => {
             <ScrollAnimation initial={{ opacity: 0, y: 200 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}>
-              <p className="mt-4 text-slate-500">
+              <p className="mt-4 text-slate-500 text-justify">
                 En Brigantium box somos especialistas en Cross Training y
                 Halterofilia. Te ofrecemos un sistema de entrenamiento de alta
                 intensidad, que lleva años cambiando la vida de mucha gente
@@ -115,7 +115,7 @@ const Activities: React.FC = () => {
                             <h3 className="text-lg font-semibold text-slate-400">
                               {feature.name}
                             </h3>
-                            <p className="mt-2 text-sm text-gray-500">
+                            <p className="mt-2 text-sm text-gray-500 text-justify">
                               {feature.description}
                             </p>
                           </motion.div>

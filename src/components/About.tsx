@@ -1,8 +1,6 @@
 import Image from "next/image";
 import ScrollAnimation from "./ScrollAnimation";
-import team ,{Coach}from '../data/team';
-
-
+import team, { Coach } from "../data/team";
 
 const About: React.FC = () => {
   return (
@@ -17,7 +15,7 @@ const About: React.FC = () => {
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
               Nuestro Equipo
             </h2>
-            <p className="mt-6 text-lg leading-8 text-gray-800">
+            <p className="mt-6 text-lg leading-8 text-gray-800 text-justify">
               Nuestro equipo se compone de profesionales que siempre han estado
               ligados al deporte. Contamos con entrenadores con estudios en
               Inef, competidores y entrenadores de crostraining con amplia
@@ -36,14 +34,14 @@ const About: React.FC = () => {
           role="list"
           className="mx-auto grid max-w-2xl grid-cols-1 gap-x-6 gap-y-20 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:gap-x-8 xl:col-span-2"
         >
-          {team.map((person:Coach) => (
+          {team.map((person: Coach) => (
             <li key={person.name}>
               <ScrollAnimation
-                initial={{ opacity: 0, x: 200 }}
+                initial={{ opacity: 0, x: 60 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5 }}
               >
-                <div className="bg-zinc-100 p-2 shadow-2xl shadow-slate-800 ">
+                <div className="bg-zinc-100 p-2 shadow-2xl shadow-slate-800 overflow-x-hidden">
                   <Image
                     className="aspect-[2/3] w-full  rounded-sm shadow-md shadow-black object-cover transition-transform duration-300 hover:scale-110"
                     src={person.imageUrl}
@@ -64,7 +62,7 @@ const About: React.FC = () => {
                 <p className="text-base leading-7 text-gray-300">
                   {person.role}
                 </p>
-                <p className="mt-4 text-base leading-7 text-gray-400">
+                <p className="mt-4 text-base leading-7 text-gray-400 text-justify">
                   {person.bio}
                 </p>
               </ScrollAnimation>
