@@ -30,15 +30,12 @@
 // export default Presentation;
 
 import { motion } from "framer-motion";
-import "./Presentation.css";
-
-
 
 const text = "Brigantium Box";
 
 const letterVariants = {
   hidden: { opacity: 0, y: 50 },
-  visible: { opacity: 1, y: 0 }
+  visible: { opacity: 1, y: 0 },
 };
 
 const containerVariants = {
@@ -46,9 +43,9 @@ const containerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.1
-    }
-  }
+      staggerChildren: 0.1,
+    },
+  },
 };
 
 const Presentation = () => {
@@ -58,29 +55,29 @@ const Presentation = () => {
         <div className="mx-auto max-w-6xl py-32 sm:py-48 lg:py-56">
           <div className="flex flex-col justify-center items-center ">
             <motion.h1
-              className="text-opacity-75 text-6xl lg:text-7xl font-bold text-blue-300  text-outline"
+              className="mt-20 text-opacity-75 text-7xl lg:text-9xl font-extrabold text-blue-300  text-outline"
               variants={containerVariants}
               initial="hidden"
               animate="visible"
-              
             >
               {text.split("").map((char, index) => (
-                <motion.span key={index} variants={letterVariants} >
+                <motion.span key={index} variants={letterVariants}>
                   {char}
                 </motion.span>
               ))}
             </motion.h1>
-            <p className="mt-6 p-6 text-lg text-zinc-300  bg-zinc-700 bg-opacity-80 shadow-slate-400 shadow-lg max-w-2xl">
+          </div>
+        </div>
+      </div>
+      {/* <div className=" bg-zinc-950">
+      <p className="px-2 text-sm text-justify text-zinc-300  max-w-2xl">
               Si estás visitando nuestra página, algo en ti ya ha cambiado.
               Quizás estás aburrido del gimnasio, quieres darle un empujón a tu
               preparación física, o simplemente te apetece cambiar de aires y
               conocer gente. Pues bien, estás en el sitio indicado. ¡Esta es tu
               mejor opción en La Coruña!
             </p>
-            
-          </div>
-        </div>
-      </div>
+      </div> */}
     </>
   );
 };
