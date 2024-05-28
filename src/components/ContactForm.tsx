@@ -64,7 +64,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ contactMessage }) => {
             <ScrollAnimation
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration:0.5}}
             >
               <h2 className="text-3xl font-bold tracking-tight text-gray-100">
                 Contáctanos!
@@ -135,7 +135,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ contactMessage }) => {
               <ScrollAnimation
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ duration: 1 }}
+                transition={{ duration: 1.5 }}
               >
                 <div className="flex gap-x-2">
                   <div className="flex-none">
@@ -164,7 +164,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ contactMessage }) => {
               <ScrollAnimation
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ duration: 1 }}
+                transition={{ duration: 0.5 }}
               >
                 <div>
                   <label
@@ -189,7 +189,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ contactMessage }) => {
               <ScrollAnimation
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ duration: 1 }}
+                transition={{ duration: 0.5 }}
               >
                 <div>
                   <label
@@ -267,7 +267,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ contactMessage }) => {
             <ScrollAnimation
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 1 }}
+              transition={{ duration: 1.5 }}
             >
               <div className="mt-8 ">
                 <button
