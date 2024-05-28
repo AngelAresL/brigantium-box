@@ -43,11 +43,11 @@ const About: React.FC = () => {
               >
                 <div className="bg-zinc-100 p-2 shadow-2xl shadow-slate-800 overflow-x-hidden">
                   <Image
-                    className="aspect-[2/3] w-full  rounded-sm shadow-md shadow-black object-cover transition-transform duration-300 hover:scale-110"
+                    className="aspect-[2/3] w-full  rounded-sm shadow-md shadow-black object-cover transition-transform duration-300 lg:hover:scale-110"
                     src={person.imageUrl}
                     alt=""
-                    width={90}
-                    height={90}
+                    width={600}
+                    height={600}
                   />
                 </div>
               </ScrollAnimation>

@@ -4,6 +4,7 @@ import emailjs from "emailjs-com";
 import ComponentLogo from "./ComponentLogo";
 import ScrollAnimation from "./ScrollAnimation";
 
+
 interface ContactFormProps {
   contactMessage: string;
 }
@@ -56,16 +57,16 @@ const ContactForm: React.FC<ContactFormProps> = ({ contactMessage }) => {
   };
 
   return (
-    <div className="  relative isolate ">
-      <div className=" mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2">
-        <div className="bg-[url('/Contacto.jpg')] bg-contain bg-no-repeat relative px-6 pb-16 pt-28 lg:static lg:px-8 ">
+    <div className=" relative isolate bg-[url('/contact.jpg')] bg-cover bg-no-repeat ">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2">
+        <div className="relative px-6 pb-16 pt-28 lg:static lg:px-8 ">
           <div className="mx-auto max-w-xl lg:mx-0 lg:max-w-lg">
             <ScrollAnimation
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5 }}
             >
-              <h2 className="text-3xl font-bold tracking-tight text-gray-900">
+              <h2 className="text-3xl font-bold tracking-tight text-gray-100">
                 Contáctanos!
               </h2>
             </ScrollAnimation>
@@ -74,7 +75,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ contactMessage }) => {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5 }}
             >
-              <p className="mt-6 text-md text-justify  text-gray-600">
+              <p className="mt-6 text-md text-justify  text-gray-200">
                 En Brigantium Box, nos encanta interactuar contigo. Ya sea que
                 tengas preguntas sobre nuestros entrenamientos, curiosidad por
                 nuestras instalaciones, o cualquier otra inquietud, estamos aquí
@@ -100,7 +101,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ contactMessage }) => {
                       classNameImg="rounded-md transition duration-150 ease-in-out transform hover:scale-125"
                     />
                   </div>
-                  <div className="text-md text-justify  text-gray-600">
+                  <div className="text-md text-justify  text-gray-200">
                     <h3 className="font-semibold">Dirección</h3>
                     <p className="text-sm">
                       C/ Rua ermita 30 15.006 A Coruña (A Coruña, Galicia,
@@ -125,7 +126,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ contactMessage }) => {
                       classNameImg="rounded-md transition duration-150 ease-in-out transform hover:scale-125"
                     />
                   </div>
-                  <div className="text-md text-justify  text-gray-600">
+                  <div className="text-md text-justify  text-gray-200">
                     <h3 className="font-semibold">Teléfono</h3>
                     <p className="text-sm">698 14 60 80</p>
                   </div>
@@ -147,7 +148,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ contactMessage }) => {
                       classNameImg="rounded-md transition duration-150 ease-in-out transform hover:scale-125 "
                     />
                   </div>
-                  <div className="text-md text-justify  text-gray-600">
+                  <div className="text-md text-justify  text-gray-200">
                     <h3 className="font-semibold">Email</h3>
                     <p className="text-sm">Brigantium@brigantium.com</p>
                   </div>
@@ -168,7 +169,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ contactMessage }) => {
                 <div>
                   <label
                     htmlFor="name"
-                    className="block  text-gray-900 text-sm font-semibold "
+                    className="block  text-gray-200 text-sm font-semibold "
                   >
                     Nombre
                   </label>
@@ -193,7 +194,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ contactMessage }) => {
                 <div>
                   <label
                     htmlFor="surname"
-                    className="block text-sm font-semibold  text-gray-900"
+                    className="block text-sm font-semibold  text-gray-200"
                   >
                     Apellidos
                   </label>
@@ -219,7 +220,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ contactMessage }) => {
                 <div className="">
                   <label
                     htmlFor="email"
-                    className="block text-sm font-semibold  text-gray-900"
+                    className="block text-sm font-semibold  text-gray-200"
                   >
                     Email
                   </label>
@@ -245,7 +246,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ contactMessage }) => {
                 <div className="">
                   <label
                     htmlFor="message"
-                    className="block text-sm font-semibold  text-gray-900"
+                    className="block text-sm font-semibold  text-gray-200"
                   >
                     Mensaje
                   </label>
@@ -271,7 +272,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ contactMessage }) => {
               <div className="mt-8 ">
                 <button
                   type="submit"
-                  className="rounded-md w-full bg-gray-800 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-blue-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-400"
+                  className="rounded-md w-full bg-slate-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-blue-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-400"
                   disabled={isSending}
                 >
                   {isSending ? "Enviando..." : "Enviar"}
