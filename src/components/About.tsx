@@ -4,7 +4,7 @@ import team, { Coach } from "../data/team";
 
 const About: React.FC = () => {
   return (
-    <div className="bg-[url('/brigantium_wallpaper_gradient.png')] bg-cover  py-20 lg:py-40">
+    <div className="bg-gradient-to-b from-blue-400 to-black py-20 lg:py-40">
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-3">
         <ScrollAnimation
           initial={{ opacity: 0, y: 200 }}

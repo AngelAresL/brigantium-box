@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
-
 interface ScrollAnimationProps {
   children: React.ReactNode;
   initial: any;
   animate: any;
   transition: any;
+  delay?: number;
 }
 
 const ScrollAnimation: React.FC<ScrollAnimationProps> = ({
@@ -14,9 +14,10 @@ const ScrollAnimation: React.FC<ScrollAnimationProps> = ({
   initial,
   animate,
   transition,
+  delay = 0,
 }) => {
   const { ref, inView } = useInView({
-    threshold: 0.5, 
+    threshold: 0.5,
     triggerOnce: true,
   });
 
@@ -25,7 +26,7 @@ const ScrollAnimation: React.FC<ScrollAnimationProps> = ({
       ref={ref}
       initial={initial}
       animate={inView ? animate : initial}
-      transition={transition}
+      transition={{...transition,delay}}
     >
       {children}
     </motion.div>
