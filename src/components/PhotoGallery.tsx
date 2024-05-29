@@ -91,7 +91,6 @@ const PhotoGallery = () => {
   const [selectedPhoto, setSelectedPhoto] = useState<{
     src: StaticImageData;
     alt: string;
-    orientation: "horizontal" | "vertical";
   } | null>(null);
 
   const modalVariants = {
