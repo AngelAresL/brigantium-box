@@ -18,7 +18,7 @@ const tiers = [
     price: "55€",
     description:
       "Tendrás acceso a 3 clases a la semana, independientemente del tipo de clase.",
-    features: ["5 productos", "Hasta 1,000 suscriptores"],
+    features: ["La mejor manera de empezar"],
     mostPopular: false,
     image: "/crossfit-01.jpg",
     contactMessage: "Buenas! Me interesaría el Plan 1 RX.",
@@ -30,7 +30,7 @@ const tiers = [
     price: "65€",
     description:
       "Tendrás acceso a 4 clases a la semana, independientemente del tipo de clase.",
-    features: ["25 productos", "Hasta 10,000 suscriptores"],
+    features: ["Posibilidad de probar mas opciones"],
     mostPopular: true,
     image: "/crossfit-02.jpg",
     contactMessage: "Buenas! Me interesaría el Plan 2 PRO.",
@@ -42,13 +42,9 @@ const tiers = [
     price: "75€",
     description:
       "Acceso completo e ilimitado, independientemente del tipo de clase.",
-    features: [
-      "Productos ilimitados",
-      "Suscriptores ilimitados",
-      "Análisis avanzado",
-    ],
+    features: ["Para los más exigentes", "Prepara tu competición"],
     mostPopular: false,
-    image: "crossfit-03.jpg",
+    image: "crossfit-03.webp",
     contactMessage: "Buenas! Me interesaría el Plan 3 ÉLITE.",
   },
 ];
@@ -88,7 +84,8 @@ const Pricing: React.FC<PricingProps> = ({ setContactMessage }) => {
           transition={{ duration: 0.5 }}
         >
           <p className="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-gray-600">
-            Elige el plan que mejor se adapte a tus necesidades y da tu maximo nivel.
+            Elige el plan que mejor se adapte a tus necesidades y da tu maximo
+            nivel.
           </p>
         </ScrollAnimation>
         <div className="isolate mx-auto mt-10 grid max-w-md grid-cols-1 gap-8  lg:mx-0 lg:max-w-none lg:grid-cols-3">
