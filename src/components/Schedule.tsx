@@ -4,7 +4,7 @@ import "react-medium-image-zoom/dist/styles.css";
 
 const Schedule = () => {
   return (
-    <div className=" bg-[url('/schedule-bg.jpg')] bg-cover bg-no-repeat flex flex-col justify-center items-center pt-12 px-20 pb-20">
+    <div className=" bg-[url('/schedule-bg.jpg')] bg-cover bg-no-repeat flex flex-col justify-center items-center pt-12 px-4 pb-20">
       <h2 className="pb-8 text-white text-4xl font-semibold">HORARIO</h2>
       <div className="w-full max-w-screen-lg">
         <Zoom>
@@ -23,7 +23,7 @@ const Schedule = () => {
         href="https://brigantium.wodbuster.com/user/"
         target="_blank"
         rel="noopener noreferrer"
-        className="bg-gray-800 text-white font-medium p-2 mt-4 rounded-lg hover:bg-gray-600 transition duration-200"
+        className="rounded-md bg-blue-400 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-blue-300 mt-4 lg:w-1/6 px-12"
       >
         Reservar
       </a>
