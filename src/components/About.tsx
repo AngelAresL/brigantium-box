@@ -41,15 +41,13 @@ const About: React.FC = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5 }}
               >
-                <div className="bg-zinc-100 p-2 shadow-2xl shadow-slate-800 overflow-x-hidden">
-                  <Image
-                    className="aspect-[2/3] w-full  rounded-sm shadow-md shadow-black object-cover transition-transform duration-300 lg:hover:scale-110"
-                    src={person.imageUrl}
-                    alt=""
-                    width={600}
-                    height={600}
-                  />
-                </div>
+                <Image
+                  className="aspect-[2/3] w-full  rounded-sm shadow-md shadow-black object-cover"
+                  src={person.imageUrl}
+                  alt=""
+                  width={600}
+                  height={600}
+                />
               </ScrollAnimation>
               <ScrollAnimation
                 initial={{ opacity: 0, y: 200 }}

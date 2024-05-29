@@ -100,7 +100,10 @@ const ContactForm: React.FC<ContactFormProps> = ({ contactMessage }) => {
                       classNameImg="rounded-md transition duration-150 ease-in-out transform hover:scale-125"
                     />
                   </div>
-                  <div className="text-md text-justify  text-gray-200">
+                  <div
+                    className="text-md text-justify  text-gray-200 "
+                    id="contact-mobile"
+                  >
                     <h3 className="font-semibold">Dirección</h3>
                     <p className="text-sm">
                       C/ Rua ermita 30 15.006 A Coruña (A Coruña, Galicia,
@@ -271,17 +274,17 @@ const ContactForm: React.FC<ContactFormProps> = ({ contactMessage }) => {
               animate={{ opacity: 1 }}
               transition={{ duration: 1.5 }}
             >
-              <div className="mt-8 ">
+              <div className="mt-8 flex flex-col items-center">
                 <button
                   type="submit"
-                  className="rounded-md w-full bg-slate-900 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-blue-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-400"
+                  className="w-1/3 rounded-md bg-slate-900 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-blue-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-400"
                   disabled={isSending}
                 >
                   {isSending ? "Enviando..." : "Enviar"}
                 </button>
                 <div className="h-6 mt-4">
                   {isMessageVisible && (
-                    <p className="text-green-500 text-center">
+                    <p className="text-blue-300 text-center">
                       Mensaje enviado correctamente!
                     </p>
                   )}

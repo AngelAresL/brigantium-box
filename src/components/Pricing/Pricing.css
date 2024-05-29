@@ -18,8 +18,14 @@
   transform: rotateY(180deg);
 }
 
-@media (min-width: 800px) {
+@media (min-width: 1024px) {
   .flip-pricing:hover .flip-pricing-inner {
+    transform: rotateY(-180deg);
+  }
+}
+
+@media (max-width: 1024px) {
+  .flip-pricing-inner-mobile {
     transform: rotateY(-180deg);
   }
 }

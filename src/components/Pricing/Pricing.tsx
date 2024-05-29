@@ -1,6 +1,8 @@
+"use client";
 import { CheckIcon } from "@heroicons/react/20/solid";
 import "./Pricing.css";
 import ScrollAnimation from "../ScrollAnimation";
+import { MouseEventHandler, useState } from "react";
 
 function classNames(...classes: any) {
   return classes.filter(Boolean).join(" ");
@@ -30,7 +32,7 @@ const tiers = [
     price: "65€",
     description:
       "Tendrás acceso a 4 clases a la semana, independientemente del tipo de clase.",
-    features: ["Posibilidad de probar mas opciones","dfgfdgdfgfdgfdg"],
+    features: ["Posibilidad de probar mas opciones", "dfgfdgdfgfdgfdg"],
     mostPopular: true,
     image: "/crossfit-02.jpg",
     contactMessage: "Buenas! Me interesaría el Plan 2 PRO.",
@@ -52,11 +54,26 @@ const tiers = [
 const Pricing: React.FC<PricingProps> = ({ setContactMessage }) => {
   const handleContactClick = (message: string) => {
     setContactMessage(message);
-    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+    const contactElementId =
+      window.innerWidth < 600 ? "contact-mobile" : "contact";
+    document
+      .getElementById(contactElementId)
+      ?.scrollIntoView({ behavior: "smooth" });
+  };
+  const [selectedId, setSelectedId] = useState<string | null>(null);
+
+  const handleFlipMobile: MouseEventHandler<HTMLDivElement> = (event) => {
+    const id = event.currentTarget.dataset.id;
+    if (id) {
+      setSelectedId(id === selectedId ? null : id);
+    }
   };
 
   return (
-    <div className="bg-white py-24 " id="pricing">
+    <div
+      className="bg-gradient-to-b from-black to-blue-400 py-24 "
+      id="pricing"
+    >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
           <ScrollAnimation
@@ -64,7 +81,7 @@ const Pricing: React.FC<PricingProps> = ({ setContactMessage }) => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="text-2xl font-semibold  text-blue-400">
+            <h2 className="text-3xl font-bold  text-blue-400">
               Nuestras tarifas
             </h2>
           </ScrollAnimation>
@@ -73,7 +90,7 @@ const Pricing: React.FC<PricingProps> = ({ setContactMessage }) => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <p className="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
+            <p className="mt-2 text-4xl font-bold tracking-tight text-gray-300 sm:text-5xl">
               Tarifas para todo tipo de atletas
             </p>
           </ScrollAnimation>
@@ -83,7 +100,7 @@ const Pricing: React.FC<PricingProps> = ({ setContactMessage }) => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <p className="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-gray-600">
+          <p className="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-gray-300">
             Elige el plan que mejor se adapte a tus necesidades y da tu maximo
             nivel.
           </p>
@@ -98,7 +115,13 @@ const Pricing: React.FC<PricingProps> = ({ setContactMessage }) => {
               delay={index * 0.5}
             >
               <div className="flip-pricing  w-full z-10 rounded-lg min-w-[350px] md:min-w-0">
-                <div className="flip-pricing-inner relative w-full h-full rounded-3xl ">
+                <div
+                  className={`flip-pricing-inner relative w-full h-full rounded-3xl ${
+                    selectedId === tier.id ? "flip-pricing-inner-mobile" : ""
+                  }`}
+                  onClick={handleFlipMobile}
+                  data-id={tier.id}
+                >
                   <div
                     className="flip-pricing-front w-full h-full text-center text-4xl flex items-center justify-center absolute rounded-3xl bg-center bg-no-repeat bg-cover"
                     style={{ backgroundImage: `url(${tier.image})` }}
@@ -108,7 +131,7 @@ const Pricing: React.FC<PricingProps> = ({ setContactMessage }) => {
                     </div>
                   </div>
 
-                  <div className="flip-pricing-back absolute p-8 xl:p-10">
+                  <div className="h-full flip-pricing-back absolute p-8 xl:p-10 bg-white rounded-3xl shadow-lg">
                     <div className="flex items-center justify-between gap-x-4 ">
                       <h3
                         id={tier.id}
