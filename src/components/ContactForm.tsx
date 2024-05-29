@@ -4,7 +4,6 @@ import emailjs from "emailjs-com";
 import ComponentLogo from "./ComponentLogo";
 import ScrollAnimation from "./ScrollAnimation";
 
-
 interface ContactFormProps {
   contactMessage: string;
 }
@@ -57,16 +56,16 @@ const ContactForm: React.FC<ContactFormProps> = ({ contactMessage }) => {
   };
 
   return (
-    <div className=" relative isolate ">
+    <div className=" relative isolate bg-[url('/contact.jpg')]  bg-cover bg-no-repeat bg-center">
       <div className="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2">
         <div className="relative px-6 pb-16 pt-28 lg:static lg:px-8 ">
           <div className="mx-auto max-w-xl lg:mx-0 lg:max-w-lg">
             <ScrollAnimation
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration:0.5}}
+              transition={{ duration: 0.5 }}
             >
-              <h2 className="text-3xl font-bold tracking-tight text-gray-900">
+              <h2 className="text-3xl font-bold tracking-tight text-gray-100">
                 Contáctanos!
               </h2>
             </ScrollAnimation>
@@ -75,7 +74,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ contactMessage }) => {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5 }}
             >
-              <p className="mt-6 text-md text-justify  text-gray-600">
+              <p className="mt-6 text-md text-justify  text-gray-200">
                 En Brigantium Box, nos encanta interactuar contigo. Ya sea que
                 tengas preguntas sobre nuestros entrenamientos, curiosidad por
                 nuestras instalaciones, o cualquier otra inquietud, estamos aquí
@@ -83,7 +82,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ contactMessage }) => {
               </p>
             </ScrollAnimation>
 
-            <div className="mt-8 space-y-2 text-base  text-gray-600">
+            <div className="mt-8 space-y-2 text-base  text-gray-200">
               <ScrollAnimation
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -101,7 +100,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ contactMessage }) => {
                       classNameImg="rounded-md transition duration-150 ease-in-out transform hover:scale-125"
                     />
                   </div>
-                  <div className="text-md text-justify  text-gray-600">
+                  <div className="text-md text-justify  text-gray-200">
                     <h3 className="font-semibold">Dirección</h3>
                     <p className="text-sm">
                       C/ Rua ermita 30 15.006 A Coruña (A Coruña, Galicia,
@@ -126,7 +125,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ contactMessage }) => {
                       classNameImg="rounded-md transition duration-150 ease-in-out transform hover:scale-125"
                     />
                   </div>
-                  <div className="text-md text-justify  text-gray-600">
+                  <div className="text-md text-justify  text-gray-200">
                     <h3 className="font-semibold">Teléfono</h3>
                     <p className="text-sm">698 14 60 80</p>
                   </div>
@@ -148,7 +147,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ contactMessage }) => {
                       classNameImg="rounded-md transition duration-150 ease-in-out transform hover:scale-125 "
                     />
                   </div>
-                  <div className="text-md text-justify  text-gray-600">
+                  <div className="text-md text-justify  text-gray-200">
                     <h3 className="font-semibold">Email</h3>
                     <p className="text-sm">Brigantium@brigantium.com</p>
                   </div>
@@ -158,8 +157,11 @@ const ContactForm: React.FC<ContactFormProps> = ({ contactMessage }) => {
           </div>
         </div>
 
-        <form onSubmit={sendMail} className="px-6 pb-2 pt-2 lg:pt-28 sm:pb-32 lg:px-8">
-          <div className="mx-auto max-w-xl lg:mr-0 lg:max-w-lg">
+        <form
+          onSubmit={sendMail}
+          className="px-6 pb-14 pt-2 lg:pt-28 sm:pb-32 lg:px-8"
+        >
+          <div className="mx-auto max-w-xl lg:mr-0 lg:max-w-lg w-full  bg-white p-6 rounded-lg shadow-lg relative ">
             <div className="flex flex-col space-y-4">
               <ScrollAnimation
                 initial={{ opacity: 0 }}

@@ -4,7 +4,7 @@ import "react-medium-image-zoom/dist/styles.css";
 
 const Schedule = () => {
   return (
-    <div className=" bg-[url('/contact.jpg')] bg-cover bg-no-repeat flex flex-col justify-center items-center pt-12 px-20 pb-20">
+    <div className=" bg-[url('/schedule-bg.jpg')] bg-cover bg-no-repeat flex flex-col justify-center items-center pt-12 px-20 pb-20">
       <h2 className="pb-8 text-white text-4xl font-semibold">HORARIO</h2>
       <div className="w-full max-w-screen-lg">
         <Zoom>
