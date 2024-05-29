@@ -15,7 +15,7 @@ const About: React.FC = () => {
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
               Nuestro Equipo
             </h2>
-            <p className="mt-6 text-lg leading-8 text-gray-800 text-justify">
+            <p className="mt-6 text-lg leading-8 text-gray-950 text-justify">
               Nuestro equipo se compone de profesionales que siempre han estado
               ligados al deporte. Contamos con entrenadores con estudios en
               Inef, competidores y entrenadores de crostraining con amplia
