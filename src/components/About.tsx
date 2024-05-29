@@ -4,7 +4,7 @@ import team, { Coach } from "../data/team";
 
 const About: React.FC = () => {
   return (
-    <div className="bg-[url('/brigantium_wallpaper_gradient.png')] bg-cover  py-20 lg:py-40">
+    <div className="bg-gradient-to-b from-blue-400 to-black py-20 lg:py-40">
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-3">
         <ScrollAnimation
           initial={{ opacity: 0, y: 200 }}
@@ -15,7 +15,7 @@ const About: React.FC = () => {
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
               Nuestro Equipo
             </h2>
-            <p className="mt-6 text-lg leading-8 text-gray-800 text-justify">
+            <p className="mt-6 text-lg leading-8 text-gray-950 text-justify">
               Nuestro equipo se compone de profesionales que siempre han estado
               ligados al deporte. Contamos con entrenadores con estudios en
               Inef, competidores y entrenadores de crostraining con amplia
@@ -43,11 +43,11 @@ const About: React.FC = () => {
               >
                 <div className="bg-zinc-100 p-2 shadow-2xl shadow-slate-800 overflow-x-hidden">
                   <Image
-                    className="aspect-[2/3] w-full  rounded-sm shadow-md shadow-black object-cover transition-transform duration-300 hover:scale-110"
+                    className="aspect-[2/3] w-full  rounded-sm shadow-md shadow-black object-cover transition-transform duration-300 lg:hover:scale-110"
                     src={person.imageUrl}
                     alt=""
-                    width={90}
-                    height={90}
+                    width={600}
+                    height={600}
                   />
                 </div>
               </ScrollAnimation>

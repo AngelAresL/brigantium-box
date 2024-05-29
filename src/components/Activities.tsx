@@ -28,7 +28,7 @@ const classNames = (...classes: (string | undefined)[]): string => {
 const Activities: React.FC = () => {
   const [activeTab, setActiveTab] = useState<string>("crossTraining");
   return (
-    <div className="bg-zinc-950 degradado-superior">
+    <div className="bg-gradient-to-b from-zinc-900 to-zinc-950 ">
       <section
         aria-labelledby="features-heading"
         className="mx-auto max-w-7xl py-32 sm:px-2 lg:px-8"

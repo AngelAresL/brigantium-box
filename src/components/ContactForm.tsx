@@ -2,6 +2,7 @@
 import { FormEvent, useEffect, useState } from "react";
 import emailjs from "emailjs-com";
 import ComponentLogo from "./ComponentLogo";
+import ScrollAnimation from "./ScrollAnimation";
 
 interface ContactFormProps {
   contactMessage: string;
@@ -55,131 +56,241 @@ const ContactForm: React.FC<ContactFormProps> = ({ contactMessage }) => {
   };
 
   return (
-    <div className="flex flex-col lg:flex-row justify-center items-center min-h-screen p-4 my-10">
-      <div className="w-full max-w-lg bg-white p-6 rounded-lg shadow-lg relative mx-4">
-        <h1 className="text-2xl font-bold text-center mb-4">Contáctanos!</h1>
-        <form onSubmit={sendMail} className="flex flex-col space-y-4">
-          <div>
-            <label htmlFor="name" className="block text-gray-700 font-medium">
-              Nombre
-            </label>
-            <input
-              type="text"
-              name="name"
-              id="name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              className="mt-1 block w-full p-2 border border-gray-300 rounded-lg"
-              required
-            />
-          </div>
-
-          <div>
-            <label
-              htmlFor="surname"
-              className="block text-gray-700 font-medium"
+    <div className=" relative isolate bg-[url('/contact.jpg')]  bg-cover bg-no-repeat bg-center">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2">
+        <div className="relative px-6 pb-16 pt-28 lg:static lg:px-8 ">
+          <div className="mx-auto max-w-xl lg:mx-0 lg:max-w-lg">
+            <ScrollAnimation
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5 }}
             >
-              Apellidos
-            </label>
-            <input
-              type="text"
-              name="surname"
-              id="surname"
-              value={surName}
-              onChange={(e) => setSurName(e.target.value)}
-              className="mt-1 block w-full p-2 border border-gray-300 rounded-lg"
-              required
-            />
-          </div>
-
-          <div>
-            <label htmlFor="email" className="block text-gray-700 font-medium">
-              Email
-            </label>
-            <input
-              type="email"
-              name="email"
-              id="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="mt-1 block w-full p-2 border border-gray-300 rounded-lg"
-              required
-            />
-          </div>
-
-          <div>
-            <label
-              htmlFor="message"
-              className="block text-gray-700 font-medium"
+              <h2 className="text-3xl font-bold tracking-tight text-gray-100">
+                Contáctanos!
+              </h2>
+            </ScrollAnimation>
+            <ScrollAnimation
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5 }}
             >
-              Mensaje
-            </label>
-            <textarea
-              name="message"
-              id="message"
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
-              className="mt-1 block w-full p-2 border border-gray-300 rounded-lg h-24"
-              required
-            ></textarea>
-          </div>
+              <p className="mt-6 text-md text-justify  text-gray-200">
+                En Brigantium Box, nos encanta interactuar contigo. Ya sea que
+                tengas preguntas sobre nuestros entrenamientos, curiosidad por
+                nuestras instalaciones, o cualquier otra inquietud, estamos aquí
+                para ayudarte.
+              </p>
+            </ScrollAnimation>
 
-          <button
-            type="submit"
-            className="bg-gray-800 text-white font-medium p-2 rounded-lg hover:bg-gray-600 transition duration-200"
-            disabled={isSending}
-          >
-            {isSending ? "Enviando..." : "Enviar"}
-          </button>
+            <div className="mt-8 space-y-2 text-base  text-gray-200">
+              <ScrollAnimation
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1 }}
+              >
+                <div className="flex gap-x-2">
+                  <div className="flex-none">
+                    <ComponentLogo
+                      href="https://maps.app.goo.gl/P9KDoJK2iZimi7tR6"
+                      src="/location-logo.svg"
+                      target="_blank"
+                      alt="Location"
+                      size={24}
+                      classNameA="flex justify-center items-center"
+                      classNameImg="rounded-md transition duration-150 ease-in-out transform hover:scale-125"
+                    />
+                  </div>
+                  <div className="text-md text-justify  text-gray-200">
+                    <h3 className="font-semibold">Dirección</h3>
+                    <p className="text-sm">
+                      C/ Rua ermita 30 15.006 A Coruña (A Coruña, Galicia,
+                      España)
+                    </p>
+                  </div>
+                </div>
+              </ScrollAnimation>
+              <ScrollAnimation
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1 }}
+              >
+                <div className="flex gap-x-2">
+                  <div className="flex-none">
+                    <ComponentLogo
+                      href={`tel:${process.env.NEXT_PUBLIC_TEL}`}
+                      src="/phone-logo.svg"
+                      alt="Phone"
+                      size={24}
+                      classNameA="flex justify-center items-center"
+                      classNameImg="rounded-md transition duration-150 ease-in-out transform hover:scale-125"
+                    />
+                  </div>
+                  <div className="text-md text-justify  text-gray-200">
+                    <h3 className="font-semibold">Teléfono</h3>
+                    <p className="text-sm">698 14 60 80</p>
+                  </div>
+                </div>
+              </ScrollAnimation>
+              <ScrollAnimation
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1.5 }}
+              >
+                <div className="flex gap-x-2">
+                  <div className="flex-none">
+                    <ComponentLogo
+                      href={`mailto:${process.env.NEXT_PUBLIC_EMAIL}`}
+                      src="/mail-logo.svg"
+                      alt="Mail"
+                      size={24}
+                      classNameA="flex justify-center items-center"
+                      classNameImg="rounded-md transition duration-150 ease-in-out transform hover:scale-125 "
+                    />
+                  </div>
+                  <div className="text-md text-justify  text-gray-200">
+                    <h3 className="font-semibold">Email</h3>
+                    <p className="text-sm">Brigantium@brigantium.com</p>
+                  </div>
+                </div>
+              </ScrollAnimation>
+            </div>
+          </div>
+        </div>
+
+        <form
+          onSubmit={sendMail}
+          className="px-6 pb-14 pt-2 lg:pt-28 sm:pb-32 lg:px-8"
+        >
+          <div className="mx-auto max-w-xl lg:mr-0 lg:max-w-lg w-full  bg-white p-6 rounded-lg shadow-lg relative ">
+            <div className="flex flex-col space-y-4">
+              <ScrollAnimation
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5 }}
+              >
+                <div>
+                  <label
+                    htmlFor="name"
+                    className="block  text-gray-800 text-sm font-semibold "
+                  >
+                    Nombre
+                  </label>
+                  <div className="mt-2.5">
+                    <input
+                      type="text"
+                      name="name"
+                      id="name"
+                      autoComplete="given-name"
+                      onChange={(e) => setName(e.target.value)}
+                      required
+                      className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-400 placeholder:text-gray-400  focus:ring-inset focus:ring-indigo-600 "
+                    />
+                  </div>
+                </div>
+              </ScrollAnimation>
+              <ScrollAnimation
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5 }}
+              >
+                <div>
+                  <label
+                    htmlFor="surname"
+                    className="block text-sm font-semibold  text-gray-800"
+                  >
+                    Apellidos
+                  </label>
+                  <div className="mt-2.5">
+                    <input
+                      type="text"
+                      name="surname"
+                      id="surname"
+                      value={surName}
+                      onChange={(e) => setSurName(e.target.value)}
+                      autoComplete="family-name"
+                      className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-400 placeholder:text-gray-400 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                      required
+                    />
+                  </div>
+                </div>
+              </ScrollAnimation>
+              <ScrollAnimation
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1 }}
+              >
+                <div className="">
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-semibold  text-gray-800"
+                  >
+                    Email
+                  </label>
+                  <div className="mt-2.5">
+                    <input
+                      type="email"
+                      name="email"
+                      id="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      autoComplete="email"
+                      className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-400 placeholder:text-gray-400 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                      required
+                    />
+                  </div>
+                </div>
+              </ScrollAnimation>
+              <ScrollAnimation
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1 }}
+              >
+                <div className="">
+                  <label
+                    htmlFor="message"
+                    className="block text-sm font-semibold  text-gray-800"
+                  >
+                    Mensaje
+                  </label>
+                  <div className="mt-2.5">
+                    <textarea
+                      name="message"
+                      id="message"
+                      value={message}
+                      onChange={(e) => setMessage(e.target.value)}
+                      className="block w-full h-24 rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-400 placeholder:text-gray-400  focus:ring-inset focus:ring-blue-400 sm:text-sm "
+                      defaultValue={""}
+                      required
+                    />
+                  </div>
+                </div>
+              </ScrollAnimation>
+            </div>
+            <ScrollAnimation
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1.5 }}
+            >
+              <div className="mt-8 ">
+                <button
+                  type="submit"
+                  className="rounded-md w-full bg-slate-900 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-blue-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-400"
+                  disabled={isSending}
+                >
+                  {isSending ? "Enviando..." : "Enviar"}
+                </button>
+                <div className="h-6 mt-4">
+                  {isMessageVisible && (
+                    <p className="text-green-500 text-center">
+                      Mensaje enviado correctamente!
+                    </p>
+                  )}
+                </div>
+              </div>
+            </ScrollAnimation>
+          </div>
         </form>
-        <div className="h-6 mt-4">
-          {isMessageVisible && (
-            <p className="text-green-500 text-center">
-              Mensaje enviado correctamente!
-            </p>
-          )}
-        </div>
       </div>
-      <aside className="m-20 text-center">
-        <div className="address m-6">
-          <ComponentLogo
-            href="https://maps.app.goo.gl/P9KDoJK2iZimi7tR6"
-            src="/location-logo.svg"
-            target="_blank"
-            alt="Location"
-            size={36}
-            classNameA="flex justify-center items-center"
-            classNameImg="m-4 rounded-md transition duration-150 ease-in-out transform hover:scale-125"
-          />
-          <h3>Dirección</h3>
-          <p>{process.env.NEXT_PUBLIC_ADDRESS}</p>
-        </div>
-        <div className="phone m-6">
-          <ComponentLogo
-            href={`tel:${process.env.NEXT_PUBLIC_TEL}`}
-            src="/phone-logo.svg"
-            alt="Phone"
-            size={36}
-            classNameA="flex justify-center items-center"
-            classNameImg="m-4 rounded-md transition duration-150 ease-in-out transform hover:scale-125"
-          />
-          <h3>Teléfono</h3>
-          <p>{process.env.NEXT_PUBLIC_TEL}</p>
-        </div>
-        <div className="mail m-6">
-          <ComponentLogo
-            href={`mailto:${process.env.NEXT_PUBLIC_EMAIL}`}
-            src="/mail-logo.svg"
-            alt="Mail"
-            size={36}
-            classNameA="flex justify-center items-center"
-            classNameImg="m-4 rounded-md transition duration-150 ease-in-out transform hover:scale-125"
-          />
-
-          <h3>Email</h3>
-          <p>{process.env.NEXT_PUBLIC_EMAIL}</p>
-        </div>
-      </aside>
     </div>
   );
 };

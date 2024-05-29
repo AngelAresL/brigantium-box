@@ -39,11 +39,7 @@ const Home: React.FC = () => {
       <div id="about">
         <About />
       </div>
-      <div>
-        <h2 className="text-4xl font-bold text-center mt-10">
-          Horarios y Clases
-        </h2>
-      </div>
+    
 
       <Schedule />
 
