@@ -105,10 +105,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ contactMessage }) => {
                     id="contact-mobile"
                   >
                     <h3 className="font-semibold">Dirección</h3>
-                    <p className="text-sm">
-                      C/ Rua ermita 30 15.006 A Coruña (A Coruña, Galicia,
-                      España)
-                    </p>
+                    <p className="text-sm">{process.env.NEXT_PUBLIC_ADDRESS}</p>
                   </div>
                 </div>
               </ScrollAnimation>
@@ -130,7 +127,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ contactMessage }) => {
                   </div>
                   <div className="text-md text-justify  text-gray-200">
                     <h3 className="font-semibold">Teléfono</h3>
-                    <p className="text-sm">698 14 60 80</p>
+                    <p className="text-sm">{process.env.NEXT_PUBLIC_TEL}</p>
                   </div>
                 </div>
               </ScrollAnimation>
@@ -152,7 +149,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ contactMessage }) => {
                   </div>
                   <div className="text-md text-justify  text-gray-200">
                     <h3 className="font-semibold">Email</h3>
-                    <p className="text-sm">Brigantium@brigantium.com</p>
+                    <p className="text-sm">{process.env.NEXT_PUBLIC_EMAIL}</p>
                   </div>
                 </div>
               </ScrollAnimation>
