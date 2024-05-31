@@ -11,7 +11,7 @@ const Photo: React.FC<PhotoProps> = ({ src, alt }: PhotoProps) => {
       src={src}
       alt={alt}
       loading="lazy"
-      className="transition duration-300 ease-in-out transform group-hover:scale-110 object-cover"
+      className="transition duration-300 ease-in-out transform lg:group-hover:scale-110 object-cover"
     />
   );
 };

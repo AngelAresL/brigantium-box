@@ -1,33 +1,3 @@
-// import { Permanent_Marker } from "next/font/google";
-// import "./Presentation.css"
-// const permanent = Permanent_Marker({ weight: "400", subsets: ["latin"] });
-
-// const Presentation = () => {
-//   return (
-//     <>
-//       <div className="bg-[url('/backgroundPresentation.jpg')] h-screen bg-cover bg-no-repeat bg-top pt-24">
-//         <div className=" mx-auto max-w-6xl py-32 sm:py-48 lg:py-56">
-//           <div className="flex flex-col justify-center items-center">
-//             <h1
-//               className={`text-5xl lg:text-9xl font-bold  text-blue-300 text-opacity-75  ${permanent.className} text-outline`}
-//             >
-//               Brigantium Box
-//             </h1>
-//             <p className="mt-6 p-6 text-lg  text-black bg-slate-300 bg-opacity-20 shadow-slate-400 shadow-lg max-w-2xl">
-//               Si estás visitando nuestra página, algo en ti ya ha cambiado.
-//               Quizás estás aburrido del gimnasio, quieres darle un empujón a tu
-//               preparación física, o simplemente te apetece cambiar de aires y
-//               conocer gente. Pues bien, estás en el sitio indicado. ¡Esta es tu
-//               mejor opción en La Coruña!
-//             </p>
-//             <div className="mt-10 flex items-center justify-center gap-x-6"></div>
-//           </div>
-//         </div>
-//       </div>
-//     </>
-//   );
-// };
-// export default Presentation;
 
 import { motion } from "framer-motion";
 

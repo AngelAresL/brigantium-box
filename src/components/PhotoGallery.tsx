@@ -37,6 +37,7 @@ import foto22 from "../../public/IMG_8227.jpeg";
 import foto23 from "../../public/IMG_8228.jpeg";
 import foto24 from "../../public/IMG_8229.jpeg";
 import { useState } from "react";
+import ScrollAnimation from "./ScrollAnimation";
 
 type PhotoInfo = {
   src: StaticImageData;
@@ -44,9 +45,10 @@ type PhotoInfo = {
 };
 
 export const photos: PhotoInfo[] = [
-  { src: foto1, alt: "Description of photo 1" },
+  
   { src: foto2, alt: "Description of photo 2" },
   { src: foto3, alt: "Description of photo 3" },
+  { src: foto1, alt: "Description of photo 1" },
   { src: foto4, alt: "Description of photo 4" },
   { src: foto5, alt: "Description of photo 5" },
   { src: foto6, alt: "Description of photo 6" },
@@ -119,23 +121,30 @@ const PhotoGallery = () => {
       <Box sx={{ width: "100%", height: "100%" }}>
         <ImageList variant="masonry" cols={getCols()} gap={8}>
           {photos.map((photo, index) => (
-            <ImageListItem
+            <ScrollAnimation
               key={index}
-              onClick={() => setSelectedPhoto(photo)}
-              className="group w-full h-full overflow-hidden cursor-pointer relative"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, ease: "easeInOut" }}
+              delay={index * 0.1} // Cada foto tendrá un retraso incremental
             >
-              <div
+              <ImageListItem
                 onClick={() => setSelectedPhoto(photo)}
-                className="w-full h-full"
+                className="group w-full h-full overflow-hidden cursor-pointer relative"
               >
-                <Photo src={photo.src} alt={photo.alt} />
-                <div className="absolute inset-0 bg-black bg-opacity-20 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-300">
-                  <span className="text-white text-4xl opacity-0 group-hover:opacity-100">
-                    +
-                  </span>
+                <div
+                  onClick={() => setSelectedPhoto(photo)}
+                  className="w-full h-full"
+                >
+                  <Photo src={photo.src} alt={photo.alt} />
+                  <div className="absolute inset-0 bg-black bg-opacity-20 opacity-0 lg:group-hover:opacity-100 flex items-center justify-center transition-opacity duration-300">
+                    <span className="text-white text-4xl opacity-0 lg:group-hover:opacity-100">
+                      +
+                    </span>
+                  </div>
                 </div>
-              </div>
-            </ImageListItem>
+              </ImageListItem>
+            </ScrollAnimation>
           ))}
         </ImageList>
       </Box>

@@ -32,7 +32,7 @@ const tiers = [
     price: "65€",
     description:
       "Tendrás acceso a 4 clases a la semana, independientemente del tipo de clase.",
-    features: ["Posibilidad de probar mas opciones", "dfgfdgdfgfdgfdg"],
+    features: ["Posibilidad de probar mas opciones"],
     mostPopular: true,
     image: "/crossfit-02.jpg",
     contactMessage: "Buenas! Me interesaría el Plan 2 PRO.",

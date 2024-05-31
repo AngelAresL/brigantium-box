@@ -1,8 +1,11 @@
 import Image from "next/image";
 import ScrollAnimation from "./ScrollAnimation";
 import team, { Coach } from "../data/team";
+import { useTheme, useMediaQuery } from "@mui/material";
 
 const About: React.FC = () => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
   return (
     <div className="bg-gradient-to-b from-blue-400 to-black py-20 lg:py-40">
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-3">
@@ -37,14 +40,16 @@ const About: React.FC = () => {
           {team.map((person: Coach) => (
             <li key={person.name}>
               <ScrollAnimation
-                initial={{ opacity: 0, x: 60 }}
-                animate={{ opacity: 1, x: 0 }}
+                initial={
+                  isMobile ? { opacity: 0, x: 0 } : { opacity: 0, x: 60 }
+                }
+                animate={isMobile ? { opacity: 1, x: 0 } : { opacity: 1, x: 0 }}
                 transition={{ duration: 0.5 }}
               >
                 <Image
                   className="aspect-[2/3] w-full  rounded-sm shadow-md shadow-black object-cover"
                   src={person.imageUrl}
-                  alt=""
+                  alt={person.name}
                   width={600}
                   height={600}
                 />
