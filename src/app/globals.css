@@ -10,5 +10,8 @@ html {
 }
 
 .text-title {
-  font-size: clamp(48px, 6vw, 128px);
+  font-size: clamp(64px, 8vw, 128px);
+}
+.text-404 {
+  font-size: clamp(64px, 8vw, 96px);
 }

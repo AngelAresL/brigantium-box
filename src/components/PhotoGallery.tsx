@@ -45,7 +45,6 @@ type PhotoInfo = {
 };
 
 export const photos: PhotoInfo[] = [
-  
   { src: foto2, alt: "Description of photo 2" },
   { src: foto3, alt: "Description of photo 3" },
   { src: foto1, alt: "Description of photo 1" },
@@ -164,16 +163,15 @@ const PhotoGallery = () => {
               exit="exit"
               className="flex justify-center items-center  mx-auto my-auto w-full h-full"
             >
-              {selectedPhoto && (
-                <div className="">
-                  <Image
-                    src={selectedPhoto.src}
-                    alt={selectedPhoto.alt}
-                    fill
-                    className="relative object-contain  "
-                  />
-                </div>
-              )}
+              <div className="">
+                <Image
+                  src={selectedPhoto.src}
+                  alt={selectedPhoto.alt}
+                  fill
+                  className="relative object-contain  "
+                />
+              </div>
+
               <button
                 onClick={() => setSelectedPhoto(null)}
                 className="absolute -top-20 right-0  text-white text-4xl "
