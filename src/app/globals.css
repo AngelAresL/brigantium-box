@@ -7,5 +7,8 @@ html {
 }
 #about {
   owerflow: hidden;
-} 
+}
 
+.text-title {
+  font-size: clamp(48px, 6vw, 128px);
+}

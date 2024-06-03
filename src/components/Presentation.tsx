@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 
 const text = "Brigantium Box";
@@ -21,11 +20,11 @@ const containerVariants = {
 const Presentation = () => {
   return (
     <>
-      <div className="bg-[url('/backgroundPresentation.jpg')] h-screen bg-cover bg-no-repeat bg-top pt-24">
-        <div className="mx-auto max-w-6xl py-32 sm:py-48 lg:py-56">
-          <div className="flex flex-col justify-center items-center ">
+      <div className="bg-[url('/backgroundPresentation.jpg')] min-h-screen bg-cover bg-no-repeat bg-center flex items-center">
+        <div className="mx-auto max-w-6xl text-center">
+          <div className="flex flex-col justify-center items-center">
             <motion.h1
-              className="mt-20 text-opacity-75 text-7xl lg:text-9xl font-extrabold text-blue-300  text-outline"
+              className="text-opacity-75 font-extrabold text-blue-300 text-outline text-title m-10"
               variants={containerVariants}
               initial="hidden"
               animate="visible"
