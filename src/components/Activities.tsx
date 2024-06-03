@@ -35,9 +35,11 @@ const Activities: React.FC = () => {
       >
         <div className="mx-auto max-w-2xl px-4 lg:max-w-none lg:px-0">
           <div className="max-w-3xl">
-            <ScrollAnimation initial={{ opacity: 0, y: 200 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}>
+            <ScrollAnimation
+              initial={{ opacity: 0, y: 200 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+            >
               <h2
                 id="features-heading"
                 className="text-3xl font-bold tracking-tight text-zinc-500 sm:text-4xl"
@@ -45,9 +47,11 @@ const Activities: React.FC = () => {
                 Nuestros servicios
               </h2>
             </ScrollAnimation>
-            <ScrollAnimation initial={{ opacity: 0, y: 200 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}>
+            <ScrollAnimation
+              initial={{ opacity: 0, y: 200 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+            >
               <p className="mt-4 text-slate-500 text-justify">
                 En Brigantium box somos especialistas en Cross Training y
                 Halterofilia. Te ofrecemos un sistema de entrenamiento de alta
@@ -58,13 +62,21 @@ const Activities: React.FC = () => {
                 entrenar así? ¿encajaré? ¿podré hacerlo aunque nunca haya hecho
                 deporte antes? ¡La respuesta a todas estas preguntas es SI!
               </p>
+              <p className="mt-4 text-slate-500 text-justify">
+                Además, en Brigantium Box somos pet friendly y admitimos
+                animales. Así que no dudes en traer a tu compañero peludo
+                mientras te pones en forma. ¡Nos aseguramos de que todos se
+                sientan bienvenidos!
+              </p>
             </ScrollAnimation>
           </div>
 
           <Tab.Group as="div" className="mt-4">
-            <ScrollAnimation initial={{ opacity: 0, y: 200 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}>
+            <ScrollAnimation
+              initial={{ opacity: 0, y: 200 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+            >
               <div className="-mx-4 flex overflow-x-auto sm:mx-0">
                 <div className="flex-auto border-b border-gray-200 px-4 sm:px-0">
                   <Tab.List className="-mb-px flex space-x-10">
@@ -88,9 +100,11 @@ const Activities: React.FC = () => {
               </div>
             </ScrollAnimation>
 
-            <ScrollAnimation initial={{ opacity: 0, y: 200 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}>
+            <ScrollAnimation
+              initial={{ opacity: 0, y: 200 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+            >
               <Tab.Panels as={Fragment}>
                 {activities.map((activity) => (
                   <Tab.Panel

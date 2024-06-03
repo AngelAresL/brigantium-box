@@ -6,8 +6,8 @@ const LegalPage = () => {
         <p className="whitespace-pre-line border border-gray-300 p-4 rounded-lg mb-6 shadow-sm">
           {`Gimnasios Brigantium Box
 Rua Ermita,30
-15.006 A Coruña (A Coruña, Galicia)
-CIF/NIF- J70495098
+15.008 A Coruña (A Coruña, Galicia)
+NIF- 46900549
 TLF: 698 14 60 80
 www.brigantiumbox.es`}
         </p>
