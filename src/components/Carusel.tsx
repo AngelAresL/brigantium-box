@@ -1,51 +1,32 @@
-// "use client";
+"use client";
 
-// import useEmblaCarousel from "embla-carousel-react";
+import useEmblaCarousel from "embla-carousel-react";
 
-// const Carousel = () => {
-//   const [emblaRef] = useEmblaCarousel({ loop: true });
-
-//   return (
-//     <div className="overflow-hidden" ref={emblaRef}>
-//       <div className="flex">
-//         {images.map((image, index) => (
-//           <div className="shrink-0 " key={index}>
-//             <div className=" px-6 pt-14 pb-16 g:px-8">
-//               <img
-//                 className="h-96 w-full flex-none rounded-2xl object-fit shadow-xl lg:aspect-square lg:h-auto lg:max-w-sm"
-//                 src={image}
-//               ></img>
-//             </div>
-//           </div>
-//         ))}
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Carousel;
-import React from "react";
-import { EmblaOptionsType } from "embla-carousel";
-import { DotButton, useDotButton } from "./EmblaCarouselDotButton";
 import {
   PrevButton,
   NextButton,
   usePrevNextButtons,
 } from "./EmblaCarouselArrowButtons";
-import useEmblaCarousel from "embla-carousel-react";
-import "./Carousel.css";
+const images = [
+  "inst-1.jpg",
+  "inst-2.jpeg",
+  "inst-3.jpeg",
+  "inst-4.jpeg",
+  "inst-5.jpg",
+  "inst-6.jpeg",
+  "inst-7.jpeg",
+  "inst-8.jpg",
+  "inst-9.jpeg",
+  "inst-10.jpeg",
+  "inst-11.jpeg",
+  "inst-12.jpeg",
+  "inst-13.jpeg",
+  "inst-14.jpeg",
+  "inst-15.jpeg",
+];
 
-type PropType = {
-  slides: number[];
-  options?: EmblaOptionsType;
-};
-
-const EmblaCarousel: React.FC<PropType> = (props) => {
-  const { slides, options } = props;
-  const [emblaRef, emblaApi] = useEmblaCarousel(options);
-
-  const { selectedIndex, scrollSnaps, onDotButtonClick } =
-    useDotButton(emblaApi);
+const Carousel = () => {
+  const [emblaRef, emblaApi] = useEmblaCarousel();
 
   const {
     prevBtnDisabled,
@@ -55,37 +36,29 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
   } = usePrevNextButtons(emblaApi);
 
   return (
-    <section className="embla">
-      <div className="embla__viewport" ref={emblaRef}>
-        <div className="embla__container">
-          {slides.map((index) => (
-            <div className="embla__slide" key={index}>
-              <div className="embla__slide__number">{index + 1}</div>
+    <section className="mx-auto max-w-xl ">
+      <div className="overflow-hidden  " ref={emblaRef}>
+        <div className="flex">
+          {images.map((image, index) => (
+            <div className="shrink-0 " key={index}>
+              <div className=" px-6  lg:px-8">
+                <img
+                  className="aspect-[3/2] flex-none rounded-xl  shadow-black shadow-xl   max-w-lg"
+                  src={image}
+                ></img>
+              </div>
             </div>
           ))}
         </div>
       </div>
-
-      <div className="embla__controls">
-        <div className="embla__buttons">
+      <div className="embla__controls pt-4 ">
+        <div className="embla__buttons gap-x-6">
           <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
           <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
-        </div>
-
-        <div className="embla__dots">
-          {scrollSnaps.map((_, index) => (
-            <DotButton
-              key={index}
-              onClick={() => onDotButtonClick(index)}
-              className={"embla__dot".concat(
-                index === selectedIndex ? " embla__dot--selected" : ""
-              )}
-            />
-          ))}
         </div>
       </div>
     </section>
   );
 };
 
-export default EmblaCarousel;
+export default Carousel;

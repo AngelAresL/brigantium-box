@@ -1,15 +1,15 @@
 import Link from "next/link";
-
+import navLinks from "@/data/navLinks";
 import SocialLinks from "./SocialLinks";
 
-const navigation = {
-  main: [
-    { name: "Contacto", href: "#contact" },
-    { name: "Nosotros", href: "#about" },
-    { name: "Servicios", href: "#activities" },
-    { name: "Tarifas", href: "#pricing" },
-  ],
-};
+// const navigation = {
+//   main: [
+//     { name: "Contacto", href: "#contact" },
+//     { name: "Nosotros", href: "#about" },
+//     { name: "Servicios", href: "#activities" },
+//     { name: "Tarifas", href: "#pricing" },
+//   ],
+// };
 
 const Footer:React.FC = () => {
   return (
@@ -19,7 +19,7 @@ const Footer:React.FC = () => {
           className="-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12"
           aria-label="Footer"
         >
-          {navigation.main.map((item) => (
+          {navLinks.map((item) => (
             <div key={item.name} className="pb-6">
               <a
                 href={item.href}
