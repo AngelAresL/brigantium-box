@@ -71,7 +71,7 @@ const Pricing: React.FC<PricingProps> = ({ setContactMessage }) => {
 
   return (
     <div
-      className="bg-gradient-to-b from-black to-blue-400 py-24 "
+      className="bg-gradient-to-b from-black to-blue-400 py-32 "
       id="pricing"
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">

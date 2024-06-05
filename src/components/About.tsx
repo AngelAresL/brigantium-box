@@ -7,7 +7,7 @@ const About: React.FC = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
   return (
-    <div className="bg-gradient-to-b from-blue-400 to-black py-20 lg:py-40">
+    <div className="bg-gradient-to-b from-blue-400 to-black py-32" id="about">
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-3">
         <ScrollAnimation
           initial={{ opacity: 0, y: 200 }}

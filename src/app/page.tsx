@@ -36,10 +36,9 @@ const Home: React.FC = () => {
       <div id="activities">
         <Activities />
       </div>
-      <div id="about">
+      <div>
         <About />
       </div>
-    
 
       <Schedule />
 
