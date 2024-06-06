@@ -14,7 +14,7 @@ interface PricingProps {
 
 const tiers = [
   {
-    name: "Plan SCALED",
+    name: "Scaled",
     id: "scaled",
     href: "#",
     price: "50€",
@@ -26,7 +26,7 @@ const tiers = [
     contactMessage: "Buenas! Me interesaría el Plan SCALED de 50€.",
   },
   {
-    name: "Plan RX",
+    name: "Rx",
     id: "rx",
     href: "#",
     price: "60€",
@@ -38,7 +38,7 @@ const tiers = [
     contactMessage: "Buenas! Me interesaría el Plan RX de 60€.",
   },
   {
-    name: "Plan PRO",
+    name: "Pro",
     id: "pro",
     href: "#",
     price: "70€",
@@ -136,10 +136,10 @@ const Pricing: React.FC<PricingProps> = ({ setContactMessage }) => {
                   data-id={tier.id}
                 >
                   <div
-                    className="flip-pricing-front w-full h-full text-center text-4xl flex items-center justify-center absolute rounded-3xl bg-center bg-no-repeat bg-cover"
+                    className="flip-pricing-front w-full h-full text-center text-4xl flex justify-center absolute rounded-3xl bg-center bg-no-repeat bg-cover items-end"
                     style={{ backgroundImage: `url(${tier.image})` }}
                   >
-                    <div className="p-2 rounded-lg w-3/5 font-semibold bg-gray-400 bg-opacity-65">
+                    <div className="p-4 rounded-b-3xl w-full font-bold bg-zinc-900 text-zinc-400 bg-opacity-90">
                       <h2>{tier.name}</h2>
                     </div>
                   </div>
@@ -174,12 +174,7 @@ const Pricing: React.FC<PricingProps> = ({ setContactMessage }) => {
                     </p>
                     <button
                       type="submit"
-                      className={classNames(
-                        tier.mostPopular
-                          ? "bg-blue-400 text-white shadow-sm hover:bg-blue-300"
-                          : "text-blue-400 ring-1 ring-inset ring-indigo-200 hover:ring-blue-300",
-                        "mt-6 block rounded-md py-2 px-3 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-400 w-full"
-                      )}
+                      className="bg-blue-400 text-white shadow-sm hover:bg-blue-300 mt-6 block rounded-md py-2 px-3 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-400 w-full"
                       onClick={() => handleContactClick(tier.contactMessage)}
                     >
                       Contacta
