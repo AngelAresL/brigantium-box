@@ -14,40 +14,40 @@ interface PricingProps {
 
 const tiers = [
   {
-    name: "Plan RX",
-    id: "rx",
+    name: "Scaled",
+    id: "scaled",
     href: "#",
-    price: "55€",
+    price: "50€",
     description:
-      "Tendrás acceso a 3 clases a la semana, independientemente del tipo de clase.",
+      "Tendrás acceso a 9 sesiones al mes, independientemente del tipo de clase.",
     features: ["La mejor manera de empezar"],
     mostPopular: false,
     image: "/crossfit-01.jpg",
-    contactMessage: "Buenas! Me interesaría el Plan 1 RX.",
+    contactMessage: "Buenas! Me interesaría el Plan SCALED de 50€.",
   },
   {
-    name: "Plan Pro",
-    id: "pro",
+    name: "Rx",
+    id: "rx",
     href: "#",
-    price: "65€",
+    price: "60€",
     description:
-      "Tendrás acceso a 4 clases a la semana, independientemente del tipo de clase.",
+      "Tendrás acceso a 13 clases al mes, independientemente del tipo de clase.",
     features: ["Posibilidad de probar mas opciones"],
     mostPopular: true,
     image: "/crossfit-02.jpg",
-    contactMessage: "Buenas! Me interesaría el Plan 2 PRO.",
+    contactMessage: "Buenas! Me interesaría el Plan RX de 60€.",
   },
   {
-    name: "Plan Elite",
-    id: "elite",
+    name: "Pro",
+    id: "pro",
     href: "#",
-    price: "75€",
+    price: "70€",
     description:
-      "Acceso completo e ilimitado, independientemente del tipo de clase.",
+      "Tendrás acceso a 16 clases al mes, independientemente del tipo de clase.",
     features: ["Para los más exigentes", "Prepara tu competición"],
     mostPopular: false,
     image: "crossfit-03.webp",
-    contactMessage: "Buenas! Me interesaría el Plan 3 ÉLITE.",
+    contactMessage: "Buenas! Me interesaría el Plan PRO de 70€.",
   },
 ];
 
@@ -104,6 +104,19 @@ const Pricing: React.FC<PricingProps> = ({ setContactMessage }) => {
             Elige el plan que mejor se adapte a tus necesidades y da tu maximo
             nivel.
           </p>
+          <p className="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-blue-400">
+            ¿Eres de esas personas que no tiene límites? Elige el plan{" "}
+            <button
+              className="text-3xl font-bold underline hover:text-gray-300"
+              onClick={() =>
+                handleContactClick(
+                  "Buenas! Me interesaría el Plan ÉLITE sin límite de 75€."
+                )
+              }
+            >
+              Élite
+            </button>
+          </p>
         </ScrollAnimation>
         <div className="isolate mx-auto mt-10 grid max-w-md grid-cols-1 gap-8  lg:mx-0 lg:max-w-none lg:grid-cols-3">
           {tiers.map((tier, index) => (
@@ -123,10 +136,10 @@ const Pricing: React.FC<PricingProps> = ({ setContactMessage }) => {
                   data-id={tier.id}
                 >
                   <div
-                    className="flip-pricing-front w-full h-full text-center text-4xl flex items-center justify-center absolute rounded-3xl bg-center bg-no-repeat bg-cover"
+                    className="flip-pricing-front w-full h-full text-center text-4xl flex justify-center absolute rounded-3xl bg-center bg-no-repeat bg-cover items-end"
                     style={{ backgroundImage: `url(${tier.image})` }}
                   >
-                    <div className="p-2 rounded-lg w-3/5 font-semibold bg-gray-400 bg-opacity-65">
+                    <div className="p-4 rounded-b-3xl w-full font-bold bg-zinc-900 text-zinc-400 bg-opacity-90">
                       <h2>{tier.name}</h2>
                     </div>
                   </div>
@@ -161,12 +174,7 @@ const Pricing: React.FC<PricingProps> = ({ setContactMessage }) => {
                     </p>
                     <button
                       type="submit"
-                      className={classNames(
-                        tier.mostPopular
-                          ? "bg-blue-400 text-white shadow-sm hover:bg-blue-300"
-                          : "text-blue-400 ring-1 ring-inset ring-indigo-200 hover:ring-blue-300",
-                        "mt-6 block rounded-md py-2 px-3 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-400 w-full"
-                      )}
+                      className="bg-blue-400 text-white shadow-sm hover:bg-blue-300 mt-6 block rounded-md py-2 px-3 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-400 w-full"
                       onClick={() => handleContactClick(tier.contactMessage)}
                     >
                       Contacta
