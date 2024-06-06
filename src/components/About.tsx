@@ -15,11 +15,11 @@ const About: React.FC = () => {
           transition={{ duration: 0.5 }}
         >
           <div className="mx-auto max-w-4xl text-center">
-            <h2 className="text-3xl font-bold  text-blue-900">Los coaches</h2>
+            <h2 className="text-3xl font-bold  text-blue-900">Nuestro equipo</h2>
             <p className="mt-2 text-4xl font-bold tracking-tight text-gray-300 sm:text-5xl">Nadie mejor para guiarte en este nuevo mundo</p>
-            <p className="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-gray-300">
+            {/* <p className="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-gray-300">
               El equipo que te llevará más allá
-            </p>
+            </p> */}
             <p className="mt-6  text-gray-950 text-justify">
               Somos profesionales que siempre hemos estado ligados al deporte.
               Entrenadores con estudios en Inef, competidores y entrenadores de

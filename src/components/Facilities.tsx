@@ -18,11 +18,11 @@ const Facilities = () => {
       <h2 className="text-4xl font-semibold  text-white text-center pb-10">
         Nuestras Instalaciones
       </h2>
-      <div className="mx-auto max-w-9xl sm:px-6 lg:px-8">
-        <div className="mx-auto flex max-w-4xl flex-col gap-16 bg-zinc-700  px-6 shadow-gray-950 shadow-lg sm:rounded-3xl sm:p-8 lg:mx-0 lg:max-w-none lg:flex-row lg:items-center  xl:gap-x-20 ">
+      <div className="mx-auto max-w-9xl px-6 lg:px-8">
+        <div className="mx-auto flex items-center max-w-4xl flex-col gap-16 bg-zinc-700  px-6 shadow-gray-950 shadow-lg rounded-3xl p-8 lg:mx-0 lg:max-w-none lg:flex-row lg:items-center  xl:gap-x-20 ">
           <Carousel />
           <div className="w-full flex-auto">
-            <p className="mt-6 text-lg leading-7 text-zinc-200">
+            <p className=" text-lg text-justify leading-7 text-zinc-200">
               Te encontraras con un Box completamente orientada en dar a
               nuestros atletas la mejor experiencia, toda la equipación
               necesaria para que el limite en tu entrenamiento lo pongas solo
