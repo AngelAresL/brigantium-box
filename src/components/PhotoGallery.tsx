@@ -161,7 +161,7 @@ const PhotoGallery = () => {
               initial="hidden"
               animate="visible"
               exit="exit"
-              className="flex justify-center items-center  mx-auto my-auto w-full h-full"
+              className="flex justify-center items-center  mx-auto my-auto w-full h-full focus:outline-none"
             >
               <div className="">
                 <Image

@@ -42,7 +42,7 @@ const Activities: React.FC = () => {
             >
               <h2
                 id="features-heading"
-                className="text-3xl font-bold tracking-tight text-zinc-500 sm:text-4xl"
+                className="text-3xl font-bold  text-zinc-500 sm:text-4xl"
               >
                 Nuestros servicios
               </h2>
@@ -147,7 +147,7 @@ const Activities: React.FC = () => {
                                 src={feature.imageSrc}
                                 alt={feature.imageAlt}
                                 fill
-                                sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
+                                sizes="(max-width: 1080px) 100vw, (max-width: 2040px) 50vw, 33vw"
                                 className="object-cover object-center"
                               />
                             </div>

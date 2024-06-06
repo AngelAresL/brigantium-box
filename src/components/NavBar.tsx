@@ -5,8 +5,7 @@ import { useState, useEffect } from "react";
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import navLinks from "@/data/navLinks";
-import {  motion, useAnimation } from "framer-motion";
-
+import { motion, useAnimation } from "framer-motion";
 
 const NavBar: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -142,7 +141,7 @@ const NavBar: React.FC = () => {
               src={"/brigantium-logo.png"}
               alt={"Brigantium logo"}
               href={"./"}
-              classNameA="-m-1.5 p-1.5"
+              classNameA="-m-1.5 p-1.5 focus:outline-none"
             />
             <motion.button
               type="button"

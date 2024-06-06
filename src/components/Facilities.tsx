@@ -1,21 +1,14 @@
 import { CheckCircleIcon } from "@heroicons/react/20/solid";
-
-import "./Carousel.css";
-
 import Carousel from "./Carusel";
-
-const benefits = [
-  "Equipamiento de alta calidad",
-  "Vestuario y Duchas",
-  "Gran zona destinada para Open",
-  "Amplio Espacio de Entrenamiento",
-  "Actualizado  con las ultimas tendencias",
-];
+import benefits from "@/data/benefits";
 
 const Facilities = () => {
   return (
-    <div className="bg-gradient-to-b from-gray-950 to-blue-400 py-16 ">
-      <h2 className="text-4xl font-semibold  text-white text-center pb-10">
+    <div
+      className="bg-gradient-to-b from-gray-950 to-blue-400 py-32 "
+      id="facilities"
+    >
+      <h2 className="text-4xl font-bold tracking-tight text-zinc-300 text-center pb-10">
         Nuestras Instalaciones
       </h2>
       <div className="mx-auto max-w-9xl px-6 lg:px-8">
@@ -42,12 +35,12 @@ const Facilities = () => {
                 </li>
               ))}
             </ul>
-            <div className="mt-10 flex">
+            <div className="mt-10 flex justify-center lg:justify-start">
               <a
-                href="#"
-                className="text-sm font-semibold leading-6 text-indigo-400"
+                href="#contact"
+                className="w-56 rounded-md bg-slate-900 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-blue-300 bg-opacity-90"
               >
-                Contacta <span aria-hidden="true">&rarr;</span>
+                Contacta 
               </a>
             </div>
           </div>

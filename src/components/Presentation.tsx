@@ -20,7 +20,7 @@ const containerVariants = {
 const Presentation = () => {
   return (
     <>
-      <div className="bg-[url('/backgroundPresentation.jpg')] min-h-screen bg-cover bg-no-repeat bg-center flex items-center mt-24">
+      <div className="bg-[url('/backgroundPresentation.jpg')] min-h-screen bg-cover bg-no-repeat bg-center flex items-center mt-14">
         <div className="mx-auto max-w-6xl text-center">
           <div className="flex flex-col justify-center items-center">
             <motion.h1
