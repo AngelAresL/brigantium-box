@@ -274,7 +274,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ contactMessage }) => {
               <div className="mt-8 flex flex-col items-center">
                 <button
                   type="submit"
-                  className="w-1/3 rounded-md bg-slate-900 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-blue-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-400"
+                  className="w-1/3 rounded-md bg-slate-900 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-blue-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-400 bg-opacity-90"
                   disabled={isSending}
                 >
                   {isSending ? "Enviando..." : "Enviar"}

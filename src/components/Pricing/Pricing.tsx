@@ -174,7 +174,7 @@ const Pricing: React.FC<PricingProps> = ({ setContactMessage }) => {
                     </p>
                     <button
                       type="submit"
-                      className="bg-blue-400 text-white shadow-sm hover:bg-blue-300 mt-6 block rounded-md py-2 px-3 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-400 w-full"
+                      className=" bg-slate-900 text-white shadow-sm  hover:bg-blue-300 mt-6 block rounded-md py-2 px-3 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-400 w-full bg-opacity-90"
                       onClick={() => handleContactClick(tier.contactMessage)}
                     >
                       Contacta

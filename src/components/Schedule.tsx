@@ -23,7 +23,7 @@ const Schedule = () => {
         href="https://brigantium.wodbuster.com/user/"
         target="_blank"
         rel="noopener noreferrer"
-        className="rounded-md bg-blue-400 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-blue-300 mt-4 lg:w-1/6 px-12"
+        className="rounded-md bg-blue-400 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-blue-300 mt-4 lg:w-1/8 px-12 bg-opacity-80"
       >
         Reservar
       </a>
