@@ -8,7 +8,8 @@ const navLinks: NavLink[] = [
   { href: "/#contact", name: "Contacto" },
   { href: "/#about", name: "Nosotros" },
   { href: "/#activities", name: "Servicios" },
+  { href: "/#facilities", name: "Instalaciones" },
   { href: "/#pricing", name: "Tarifas" },
-  { href: "/galeria", name: "Galería de fotos" },
+  { href: "/comunidad", name: "Comunidad" },
 ];
 export default navLinks;

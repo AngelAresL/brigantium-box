@@ -11,6 +11,7 @@ import Activities from "@/components/Activities";
 import About from "@/components/About";
 import Schedule from "@/components/Schedule";
 import ReviewsCarousel from "@/components/ReviewCarousel";
+import Facilities from "@/components/Facilities";
 
 const Home: React.FC = () => {
   useEffect(() => {
@@ -38,6 +39,9 @@ const Home: React.FC = () => {
       </div>
       <div>
         <About />
+      </div>
+      <div id="facilities">
+        <Facilities />
       </div>
 
       <Schedule />

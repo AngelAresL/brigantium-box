@@ -124,8 +124,8 @@ const PhotoGallery = () => {
               key={index}
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, ease: "easeInOut" }}
-              delay={index * 0.1} // Cada foto tendrá un retraso incremental
+              transition={{ duration: 0.2, ease: "easeInOut" }}
+              delay={index * 0.1} 
             >
               <ImageListItem
                 onClick={() => setSelectedPhoto(photo)}

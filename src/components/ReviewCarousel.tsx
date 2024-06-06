@@ -12,7 +12,7 @@ const ReviewsCarousel = () => {
   ]);
 
   return (
-    <section className="mx-auto  px-2  md:px-24 bg-blue-200">
+    <section className="mx-auto  px-2  md:px-24 bg-zinc-900">
       <div className="overflow-hidden" ref={emblaRef}>
         <div className="flex">
           {reviews.map((review, index) => (
@@ -42,12 +42,12 @@ const ReviewsCarousel = () => {
                     />
                   </div>
 
-                  <p className="mt-5 text-sm md:text-xl font-semibold italic tracking-tight text-gray-900  text-justify">
+                  <p className="mt-5 text-sm md:text-xl font-semibold italic tracking-tight text-zinc-400 text-justify">
                     {review.text}
                   </p>
 
                   <div className="mt-5 text-sm leading-6">
-                    <div className="font-semibold text-gray-900">
+                    <div className="font-semibold text-zinc-400">
                       {review.name}
                     </div>
                   </div>

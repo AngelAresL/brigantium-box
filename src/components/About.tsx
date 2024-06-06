@@ -14,22 +14,23 @@ const About: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <div className="mx-auto max-w-2xl lg:mx-0">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-              Nuestro Equipo
-            </h2>
-            <p className="mt-6 text-lg leading-8 text-gray-950 text-justify">
-              Nuestro equipo se compone de profesionales que siempre han estado
-              ligados al deporte. Contamos con entrenadores con estudios en
-              Inef, competidores y entrenadores de crostraining con amplia
-              experiencia y atletas de halterofilia de nivel nacional
-              compitiendo tanto para el club halterofilia Coruña como para
-              nuestro propio club CH Brigantium. La pasión por el deporte va más
-              allá del desarrollo de las capacidades físicas. Entendemos el
-              deporte como un conjunto de valores que rigen nuestras vidas.
-              Sabemos que las grandes metas exigen grandes sacrificios, y
-              nuestro objetivo es que tú consigas los tuyos sin que falte
-              asesoramiento, consejo y sobre todo diversión!
+          <div className="mx-auto max-w-4xl text-center">
+            <h2 className="text-3xl font-bold  text-blue-900">Nuestro equipo</h2>
+            <p className="mt-2 text-4xl font-bold tracking-tight text-gray-300 sm:text-5xl">Nadie mejor para guiarte en este nuevo mundo</p>
+            {/* <p className="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-gray-300">
+              El equipo que te llevará más allá
+            </p> */}
+            <p className="mt-6  text-gray-950 text-justify">
+              Somos profesionales que siempre hemos estado ligados al deporte.
+              Entrenadores con estudios en Inef, competidores y entrenadores de
+              crostraining con amplia experiencia y atletas de halterofilia de
+              nivel nacional compitiendo tanto para el club halterofilia Coruña
+              como para nuestro propio club CH Brigantium. La pasión por el
+              deporte va más allá del desarrollo de las capacidades físicas.
+              Entendemos el deporte como un conjunto de valores que rigen
+              nuestras vidas. Sabemos que las grandes metas exigen grandes
+              sacrificios, y nuestro objetivo es que tú consigas los tuyos sin
+              que falte asesoramiento, consejo y sobre todo diversión!
             </p>
           </div>
         </ScrollAnimation>
@@ -62,10 +63,10 @@ const About: React.FC = () => {
                 <h3 className="mt-6 text-lg font-semibold leading-8 text-gray-400">
                   {person.name}
                 </h3>
-                <p className="text-base leading-7 text-gray-300">
+                <p className="  text-gray-300">
                   {person.role}
                 </p>
-                <p className="mt-4 text-base leading-7 text-gray-400 text-justify">
+                <p className="mt-4   text-gray-400 text-justify">
                   {person.bio}
                 </p>
               </ScrollAnimation>
