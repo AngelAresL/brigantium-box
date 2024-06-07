@@ -61,8 +61,7 @@ export const PrevButton: React.FC<PropType> = (props) => {
 
   return (
     <button
-      className="flex items-center justify-center text-blue-400 z-10 w-10 h-10 rounded-full border-2 border-blue-400"
-      type="button"
+     className="flex items-center justify-center text-zinc-400 z-10 w-10 h-10 rounded-full border-2 border-zinc-400"
       {...restProps}
     >
       <svg className="h-5 w-5" viewBox="0 0 532 532">
@@ -81,7 +80,7 @@ export const NextButton: React.FC<PropType> = (props) => {
 
   return (
     <button
-      className="flex items-center justify-center text-blue-400 z-10 w-10 h-10 rounded-full border-2 border-blue-400"
+      className="flex items-center justify-center text-zinc-400 z-10 w-10 h-10 rounded-full border-2 border-zinc-400"
       type="button"
       {...restProps}
     >

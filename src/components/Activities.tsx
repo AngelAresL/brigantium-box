@@ -42,7 +42,7 @@ const Activities: React.FC = () => {
             >
               <h2
                 id="features-heading"
-                className="text-3xl font-bold  text-zinc-500 sm:text-4xl"
+                className="text-3xl font-bold  text-zinc-400 sm:text-4xl"
               >
                 Nuestros servicios
               </h2>

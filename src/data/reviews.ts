@@ -22,7 +22,7 @@ const reviews: Review[] = [
   },
   {
     name: "Veronica Lorenzo",
-    text: '"Uno de los mejores box de Galicia. Sin duda recomendado! 😀"',
+    text: '"Uno de los mejores box de Galicia. Sin duda recomendado!"',
   },
 ];
 export default reviews;
