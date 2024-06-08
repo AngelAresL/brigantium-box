@@ -88,7 +88,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ contactMessage }) => {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1 }}
               >
-                <div className="flex gap-x-2">
+                <div className="flex items-center gap-x-2">
                   <div className="flex-none">
                     <ComponentLogo
                       href="https://maps.app.goo.gl/P9KDoJK2iZimi7tR6"
@@ -114,7 +114,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ contactMessage }) => {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1 }}
               >
-                <div className="flex gap-x-2">
+                <div className="flex items-center gap-x-2">
                   <div className="flex-none">
                     <ComponentLogo
                       href={`tel:${process.env.NEXT_PUBLIC_TEL}`}
@@ -136,7 +136,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ contactMessage }) => {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1.5 }}
               >
-                <div className="flex gap-x-2">
+                <div className="flex items-center gap-x-2">
                   <div className="flex-none">
                     <ComponentLogo
                       href={`mailto:${process.env.NEXT_PUBLIC_EMAIL}`}
