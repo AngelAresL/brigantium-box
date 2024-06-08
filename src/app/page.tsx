@@ -6,7 +6,6 @@ import "./globals.css";
 import { useEffect, useState } from "react";
 
 import Presentation from "@/components/Presentation";
-
 import Activities from "@/components/Activities";
 import About from "@/components/About";
 import Schedule from "@/components/Schedule";
@@ -14,11 +13,12 @@ import ReviewsCarousel from "@/components/ReviewCarousel";
 import Facilities from "@/components/Facilities";
 
 const Home: React.FC = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  // useEffect(() => {
+  //   window.scrollTo(0, 0);
+  // }, []);
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
+    handleScroll();
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
