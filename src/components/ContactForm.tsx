@@ -48,6 +48,10 @@ const ContactForm: React.FC<ContactFormProps> = ({ contactMessage }) => {
         setTimeout(() => {
           setIsMessageVisible(false);
         }, 5000);
+        setName("");
+        setSurName("");
+        setEmail("");
+        setMessage("");
       })
       .catch((err) => {
         console.error("FAILED...", err);
@@ -180,6 +184,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ contactMessage }) => {
                       type="text"
                       name="name"
                       id="name"
+                      value={name}
                       autoComplete="given-name"
                       onChange={(e) => setName(e.target.value)}
                       required
@@ -259,7 +264,6 @@ const ContactForm: React.FC<ContactFormProps> = ({ contactMessage }) => {
                       value={message}
                       onChange={(e) => setMessage(e.target.value)}
                       className="block w-full h-24 rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-400 placeholder:text-gray-400  focus:ring-inset focus:ring-blue-400 sm:text-sm "
-                      defaultValue={""}
                       required
                     />
                   </div>
