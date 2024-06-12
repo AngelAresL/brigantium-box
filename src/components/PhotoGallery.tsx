@@ -12,30 +12,30 @@ import {
 } from "@mui/material";
 import { motion, AnimatePresence } from "framer-motion";
 
-import foto1 from "../../public/IMG_5983.jpeg";
-import foto2 from "../../public/IMG_5991.jpeg";
-import foto3 from "../../public/IMG_5993.jpeg";
-import foto4 from "../../public/IMG_5996.jpeg";
-import foto5 from "../../public/IMG_5997.jpeg";
-import foto6 from "../../public/IMG_7976.jpeg";
-import foto7 from "../../public/IMG_8210.jpeg";
-import foto8 from "../../public/IMG_8213.jpeg";
-import foto9 from "../../public/IMG_8214.jpeg";
-import foto10 from "../../public/IMG_8215.jpeg";
-import foto11 from "../../public/IMG_8216.jpeg";
-import foto12 from "../../public/IMG_8217.jpeg";
-import foto13 from "../../public/IMG_8218.jpeg";
-import foto14 from "../../public/IMG_8219.jpeg";
-import foto15 from "../../public/IMG_8220.jpeg";
-import foto16 from "../../public/IMG_8221.jpeg";
-import foto17 from "../../public/IMG_8222.jpeg";
-import foto18 from "../../public/IMG_8223.jpeg";
-import foto19 from "../../public/IMG_8224.jpeg";
-import foto20 from "../../public/IMG_8225.jpeg";
-import foto21 from "../../public/IMG_8226.jpeg";
-import foto22 from "../../public/IMG_8227.jpeg";
-import foto23 from "../../public/IMG_8228.jpeg";
-import foto24 from "../../public/IMG_8229.jpeg";
+import foto1 from "../../public/IMG_5983.jpg";
+import foto2 from "../../public/IMG_5991.jpg";
+import foto3 from "../../public/IMG_5993.jpg";
+import foto4 from "../../public/IMG_5996.jpg";
+import foto5 from "../../public/IMG_5997.jpg";
+import foto6 from "../../public/IMG_7976.jpg";
+import foto7 from "../../public/IMG_8210.jpg";
+import foto8 from "../../public/IMG_8213.jpg";
+import foto9 from "../../public/IMG_8214.jpg";
+import foto10 from "../../public/IMG_8215.jpg";
+import foto11 from "../../public/IMG_8216.jpg";
+import foto12 from "../../public/IMG_8217.jpg";
+import foto13 from "../../public/IMG_8218.jpg";
+import foto14 from "../../public/IMG_8219.jpg";
+import foto15 from "../../public/IMG_8220.jpg";
+import foto16 from "../../public/IMG_8221.jpg";
+import foto17 from "../../public/IMG_8222.jpg";
+import foto18 from "../../public/IMG_8223.jpg";
+import foto19 from "../../public/IMG_8224.jpg";
+import foto20 from "../../public/IMG_8225.jpg";
+import foto21 from "../../public/IMG_8226.jpg";
+import foto22 from "../../public/IMG_8227.jpg";
+import foto23 from "../../public/IMG_8228.jpg";
+import foto24 from "../../public/IMG_8229.jpg";
 import { useState } from "react";
 import ScrollAnimation from "./ScrollAnimation";
 
@@ -125,7 +125,7 @@ const PhotoGallery = () => {
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.2, ease: "easeInOut" }}
-              delay={index * 0.1} 
+              delay={index * 0.1}
             >
               <ImageListItem
                 onClick={() => setSelectedPhoto(photo)}
