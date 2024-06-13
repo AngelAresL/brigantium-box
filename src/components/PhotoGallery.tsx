@@ -129,14 +129,14 @@ const PhotoGallery = () => {
             >
               <ImageListItem
                 onClick={() => setSelectedPhoto(photo)}
-                className="group w-full h-full overflow-hidden cursor-pointer relative"
+                className="group rounded-md w-full h-full overflow-hidden cursor-pointer relative"
               >
                 <div
                   onClick={() => setSelectedPhoto(photo)}
                   className="w-full h-full"
                 >
                   <Photo src={photo.src} alt={photo.alt} />
-                  <div className="absolute inset-0 bg-black bg-opacity-20 opacity-0 lg:group-hover:opacity-100 flex items-center justify-center transition-opacity duration-300">
+                  <div className="absolute inset-0 bg-black bg-opacity-20 opacity-0 lg:group-hover:opacity-100 flex items-center justify-center transition-opacity duration-300 ">
                     <span className="text-white text-4xl opacity-0 lg:group-hover:opacity-100">
                       +
                     </span>
@@ -161,7 +161,7 @@ const PhotoGallery = () => {
               initial="hidden"
               animate="visible"
               exit="exit"
-              className="flex justify-center items-center  mx-auto my-auto w-full h-full focus:outline-none"
+              className="flex justify-center items-center  mx-auto my-auto w-full h-full focus:outline-none "
             >
               <div className="">
                 <Image

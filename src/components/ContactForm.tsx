@@ -86,7 +86,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ contactMessage }) => {
               </p>
             </ScrollAnimation>
 
-            <div className="mt-8 space-y-2 text-base  text-gray-200">
+            <div className="mt-8 space-y-2 text-base  text-gray-200 bg-gray-600 p-4 sm:p-0 rounded-lg sm:bg-inherit bg-opacity-40">
               <ScrollAnimation
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}

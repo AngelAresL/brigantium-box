@@ -8,14 +8,14 @@ export type Coach = {
 const team: Coach[] = [
   {
     name: "Oscar Rial",
-    role: "First Coach & Dueño",
-    bio: "Oscar Rial es el dueño de la organización y el primer coach del equipo. Es un apasionado de los videojuegos y ha dedicado su vida a los deportes electrónicos. Su objetivo es llevar a su equipo a lo más alto de la competición.",
+    role: "Dueño & Coach",
+    bio: "Oscar Rial es el dueño de la organización y el primer coach del equipo.",
     imageUrl: "/oki.jpg",
   },
   {
     name: "Jorge Cocoy",
     role: "Second Coach",
-    bio: "Jorge Cocoy es el segundo entrenador del equipo. Es un apasionado de los videojuegos y ha dedicado su vida a los deportes electrónicos. Su objetivo es llevar a su equipo a lo más alto de la competición.",
+    bio: "Nuestro segundo entrenador del equipo. Apasionado del functional fittnes, dedicado al deporte y a la formación. Entre sus certificaciones se encuentran: Nivel 1 con la Federación Española de Functional Fitness, Nivel 1 de la Federación Española de Halterofilia, entre otros. ",
     imageUrl: "/cocoy.jpg",
   },
 ];
