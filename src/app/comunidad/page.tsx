@@ -1,6 +1,8 @@
-
+import type { Metadata } from "next";
+import { galleryMetadata } from "@/data/metadata";
 import PhotoGallery from "../../components/PhotoGallery";
 
+export const metadata:Metadata = galleryMetadata;
 
 const GalleryPage = () => {
   return (
@@ -9,7 +11,7 @@ const GalleryPage = () => {
       <p className="text-xl text-zinc-400 text-center mt-2">
         Aquí se viene a disfrutar y entrenar duro. Esta es nuestra familia.
       </p>
-      <div className="m-8"  >
+      <div className="m-8">
         <PhotoGallery />
       </div>
     </div>

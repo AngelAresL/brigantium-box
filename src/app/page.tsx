@@ -1,8 +1,8 @@
 "use client";
+
 import ContactForm from "@/components/ContactForm";
 import Pricing from "@/components/Pricing/Pricing";
 
-import "./globals.css";
 import { useEffect, useState } from "react";
 
 import Presentation from "@/components/Presentation";
