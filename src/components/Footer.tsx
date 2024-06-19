@@ -43,10 +43,12 @@ const Footer: React.FC = () => {
           />
         </div>
         <p className="mt-10 text-center text-xs leading-5 text-gray-500">
-          &copy; BrigantiumBox 2024. Todos los derechos reservados.
+          &copy; Brigantium Box 2024 &nbsp; |
           <Link href="/aviso-legal" className="hover:text-blue-400 ml-2">
-            Aviso Legal
+            Aviso Legal &nbsp; | &nbsp;
           </Link>
+          Web diseñada por Ángel Ares Lago y Luis Díaz Vázquez
+
         </p>
       </div>
     </footer>

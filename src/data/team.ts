@@ -9,7 +9,7 @@ const team: Coach[] = [
   {
     name: "Oscar Rial",
     role: "Dueño & Coach",
-    bio: "Oscar Rial es el dueño de la organización y el primer coach del equipo.",
+    bio: "Oscar Rial es el dueño de la organización y el primer coach del equipo. Es Licenciado en Ciencias de la Actividad Física y del Deporte y cuenta con una amplia experiencia en el entrenamiento deportivo. Como atleta de halterofilia, ha sido varias veces campeón de España Máster en Halterofilia.",
     imageUrl: "/oki.jpg",
   },
   {

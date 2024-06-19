@@ -17,7 +17,7 @@ const Facilities = () => {
           <Carousel />
           <div className="w-full flex-auto">
             <p className=" text-lg text-justify leading-7 text-zinc-400">
-              Te encontraras con un Box completamente orientada en dar a
+              Te encontraras con un Box completamente orientado en dar a
               nuestros atletas la mejor experiencia, toda la equipación
               necesaria para que el limite en tu entrenamiento lo pongas solo
               tu.
