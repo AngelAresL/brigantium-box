@@ -1,5 +1,5 @@
 const WhatsAppButton: React.FC = () => {
-  const whatsappNumber = "34680576629";
+  const whatsappNumber = `34${process.env.NEXT_PUBLIC_TEL}`;
 
   return (
     <a
