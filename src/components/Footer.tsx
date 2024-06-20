@@ -47,7 +47,7 @@ const Footer: React.FC = () => {
           <Link href="/aviso-legal" className="hover:text-blue-400 ml-2">
             Aviso Legal &nbsp; | &nbsp;
           </Link>
-          Web diseñada por Ángel Ares Lago y Luis Díaz Vázquez
+          Web creada por Ángel Ares Lago y Luis Díaz Vázquez
 
         </p>
       </div>
